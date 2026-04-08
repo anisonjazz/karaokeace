@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ｜月刊カラオケエース</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-form-wrap {
+      background: white;
+      padding: 30px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .required-mark {
+      color: var(--red);
+      font-size: 0.75rem;
+      margin-left: 4px;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+      background: #fafafa;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--red);
+      background: white;
+    }
+    .form-textarea {
+      height: 160px;
+      resize: vertical;
+    }
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--mid-gray);
+      margin-top: 4px;
+    }
+    .form-submit {
+      text-align: center;
+      margin-top: 24px;
+    }
+    .btn-submit {
+      background: var(--red);
+      color: white;
+      border: none;
+      padding: 14px 50px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: var(--dark-red); }
+    .contact-info-list {
+      list-style: none;
+      padding: 0;
+    }
+    .contact-info-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .contact-info-list li strong {
+      display: inline-block;
+      min-width: 100px;
+      color: var(--dark-red);
+    }
+  </style>
+</head>
+<body>
+
+  <header style="background:#fff; border-bottom:4px solid #c0392b;">
+    <div class="header-top" style="background:#f5f5f5; color:#888;">月刊カラオケエース公式ウェブサイト｜演歌・歌謡曲の総合情報</div>
+    <div class="header-main" style="background:#fff;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990" style="height:80px; width:auto; display:block;">
+      </a>
+      <div class="header-catch" style="color:#555;">
+        演歌・歌謡曲を愛する人のためのポータルサイト
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="news/index.html">ニュース</a></li>
+        <li><a href="artists/index.html">歌手情報</a></li>
+        <li><a href="events/index.html">イベント</a></li>
+        <li><a href="ranking/index.html">ランキング</a></li>
+        <li><a href="magazine.html">最新号</a></li>
+        <li><a href="contact.html" class="active">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a><span>お問い合わせ</span>
+  </div>
+
+  <div class="container">
+    <div class="layout-main">
+      <main>
+        <div class="section-box">
+          <h1 class="section-title"><span class="icon">✉</span> お問い合わせ</h1>
+          <div class="contact-form-wrap">
+            <p style="font-size:0.88rem; color:var(--mid-gray); margin-bottom:24px; line-height:1.8;">
+              月刊カラオケエースへのお問い合わせは下記フォームよりお送りください。<br>
+              広告・掲載のご依頼、プレスリリースの送付、購読に関するご質問など、お気軽にどうぞ。<br>
+              ※ 通常3営業日以内にご返信いたします。
+            </p>
+
+            <form id="contactForm">
+              <div class="form-group">
+                <label class="form-label">
+                  お問い合わせ種別<span class="required-mark">必須</span>
+                </label>
+                <select class="form-select" id="category" required>
+                  <option value="">選択してください</option>
+                  <option value="広告・掲載のご依頼">広告・掲載のご依頼</option>
+                  <option value="プレスリリース・新曲情報の送付">プレスリリース・新曲情報の送付</option>
+                  <option value="定期購読に関するお問い合わせ">定期購読に関するお問い合わせ</option>
+                  <option value="イベント情報の掲載依頼">イベント情報の掲載依頼</option>
+                  <option value="その他">その他</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  お名前<span class="required-mark">必須</span>
+                </label>
+                <input type="text" class="form-input" id="name" placeholder="山田 太郎" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">会社名・店舗名</label>
+                <input type="text" class="form-input" id="company" placeholder="〇〇音楽事務所 / カラオケ喫茶〇〇">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  メールアドレス<span class="required-mark">必須</span>
+                </label>
+                <input type="email" class="form-input" id="email" placeholder="example@email.com" required>
+                <p class="form-note">ご返信はこちらのアドレス宛にお送りします。</p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">電話番号</label>
+                <input type="tel" class="form-input" id="tel" placeholder="03-XXXX-XXXX">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  お問い合わせ内容<span class="required-mark">必須</span>
+                </label>
+                <textarea class="form-textarea" id="message" placeholder="お問い合わせ内容を具体的にご記入ください。" required></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button type="button" class="btn-submit" onclick="sendMail()">送　信</button>
+              </div>
+            </form>
+
+            <script>
+            function sendMail() {
+              var category = document.getElementById('category').value;
+              var name     = document.getElementById('name').value;
+              var company  = document.getElementById('company').value;
+              var email    = document.getElementById('email').value;
+              var tel      = document.getElementById('tel').value;
+              var message  = document.getElementById('message').value;
+
+              if (!category || !name || !email || !message) {
+                alert('必須項目をすべてご入力ください。');
+                return;
+              }
+
+              var body = '【お問い合わせ種別】\n' + category + '\n\n'
+                       + '【お名前】\n' + name + '\n\n'
+                       + '【会社名・店舗名】\n' + (company || '（未記入）') + '\n\n'
+                       + '【メールアドレス】\n' + email + '\n\n'
+                       + '【電話番号】\n' + (tel || '（未記入）') + '\n\n'
+                       + '【お問い合わせ内容】\n' + message;
+
+              var subject = encodeURIComponent('【月刊カラオケエース】お問い合わせ：' + category);
+              var bodyEnc = encodeURIComponent(body);
+
+              window.location.href = 'mailto:info@karaokeace.co.jp?subject=' + subject + '&body=' + bodyEnc;
+            }
+            </script>
+          </div>
+        </div>
+      </main>
+
+      <aside>
+        <div class="sidebar-box">
+          <div class="sidebar-title">最新号のご案内</div>
+          <div class="magazine-cover" style="padding:12px; background:#111;">
+            <a href="magazine.html">
+              <img src="images/cover_2026_03.jpg" alt="月刊カラオケエース 2026年3月号 東海版" style="width:100%; display:block; border:3px solid #b8860b; box-shadow:4px 4px 12px rgba(0,0,0,0.6);">
+            </a>
+            <div class="magazine-issue" style="margin-top:8px;">2026年3月号（東海版）</div>
+          </div>
+          <div class="sidebar-content">
+            <p style="font-size:0.8rem; color:#555; margin-bottom:8px; line-height:1.7;">
+              <strong>巻頭：</strong>多岐川舞子「お別れメランコリー」<br>
+              <strong>取材：</strong>三船和子 / 黒川真一朗 / 知里<br>
+              　　　野中さおり / 平山花羽 / Shizuka<br>
+              <strong>定価：</strong>550円（税込）
+            </p>
+            <a href="magazine.html" class="btn-primary">定期購読のご案内</a>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-title">編集部へのご連絡</div>
+          <div class="sidebar-content">
+            <ul class="contact-info-list">
+              <li><strong>メール</strong><a href="mailto:info@karaokeace.co.jp" style="color:var(--dark-red);">info@karaokeace.co.jp</a></li>
+              <li><strong>受付時間</strong>平日 10:00〜18:00</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-title">カテゴリ</div>
+          <div class="sidebar-content">
+            <ul class="footer-links">
+              <li><a href="news/index.html">📰 最新ニュース</a></li>
+              <li><a href="artists/index.html">🎤 歌手情報</a></li>
+              <li><a href="events/index.html">📅 イベント</a></li>
+              <li><a href="ranking/index.html">🏆 ランキング</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="logo-title" style="font-family:'Noto Serif JP',serif; color:white;">月刊カラオケ<span style="color:#c0392b;">エース</span></span>
+        <p class="footer-desc">演歌・歌謡曲を愛するすべての方に向けた専門情報誌です。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">コンテンツ</div>
+        <ul class="footer-links">
+          <li><a href="news/index.html">最新ニュース</a></li>
+          <li><a href="artists/index.html">歌手情報</a></li>
+          <li><a href="events/index.html">イベント</a></li>
+          <li><a href="ranking/index.html">ランキング</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">サービス</div>
+        <ul class="footer-links">
+          <li><a href="contact.html">掲載・広告のご案内</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">会社情報</div>
+        <ul class="footer-links">
+          <li><a href="#">運営会社</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 月刊カラオケエース All Rights Reserved.</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

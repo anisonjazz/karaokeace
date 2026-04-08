@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="演歌・歌謡曲の最新ニュース。歌手の新曲情報、コンサート告知、業界ニュースをお届けします。">
+  <title>最新ニュース｜月刊カラオケエース</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .news-full-list { background: white; }
+    .news-full-item {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+      transition: background 0.15s;
+    }
+    .news-full-item:hover { background: #faf7f0; }
+    .news-full-thumb {
+      width: 140px;
+      height: 95px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #c0392b22, #b8860b22);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .news-full-content { flex: 1; }
+    .news-full-title {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .news-full-title:hover { color: var(--dark-red); }
+    .news-full-excerpt {
+      font-size: 0.82rem;
+      color: var(--mid-gray);
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+    .news-full-meta {
+      font-size: 0.72rem;
+      color: #999;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 0;
+      background: white;
+      border-bottom: 2px solid var(--red);
+    }
+    .filter-tab {
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--mid-gray);
+      cursor: pointer;
+      border-right: 1px solid var(--border);
+      transition: all 0.15s;
+      text-decoration: none;
+      display: block;
+    }
+    .filter-tab:hover, .filter-tab.active {
+      background: var(--red);
+      color: white;
+    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 24px;
+    }
+    .page-btn {
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      background: white;
+      color: var(--mid-gray);
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .page-btn:hover, .page-btn.active {
+      background: var(--red);
+      color: white;
+      border-color: var(--red);
+    }
+  </style>
+</head>
+<body>
+
+  <header style="background:#fff; border-bottom:4px solid #c0392b;">
+    <div class="header-top" style="background:#f5f5f5; color:#888;">月刊カラオケエース公式ウェブサイト｜演歌・歌謡曲の総合情報</div>
+    <div class="header-main" style="background:#fff;">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990" style="height:80px; width:auto; display:block;">
+      </a>
+      <div class="header-catch" style="color:#555;">
+        演歌・歌謡曲を愛する人のためのポータルサイト
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <ul>
+        <li><a href="../index.html">トップ</a></li>
+        <li><a href="index.html" class="active">ニュース</a></li>
+        <li><a href="../artists/index.html">歌手情報</a></li>
+        <li><a href="../events/index.html">イベント</a></li>
+        <li><a href="../ranking/index.html">ランキング</a></li>
+        <li><a href="../magazine.html">最新号</a></li>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">トップ</a><span>最新ニュース</span>
+  </div>
+
+  <div class="container">
+    <div class="layout-main">
+      <main>
+
+        <div class="section-box">
+          <h1 class="section-title"><span class="icon">📰</span> 最新ニュース</h1>
+
+          <div class="filter-tabs">
+            <a href="#" class="filter-tab active" data-filter="all">すべて</a>
+            <a href="#" class="filter-tab" data-filter="artist">歌手情報</a>
+            <a href="#" class="filter-tab" data-filter="single">新曲・CD情報</a>
+            <a href="#" class="filter-tab" data-filter="concert">コンサート情報</a>
+            <a href="#" class="filter-tab" data-filter="info">お知らせ</a>
+          </div>
+
+          <div class="news-full-list">
+
+            <a href="news12.html" class="news-full-item" data-category="concert">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-event">コンサート情報</span>
+                <span class="news-full-title">丘みどりコンサート2026「演魅 vol.7」7月11日SAYAKAホール（大阪）で開催決定</span>
+                <p class="news-full-excerpt">丘みどりの人気コンサートシリーズ「演魅」の第7弾が、2026年7月11日（土）にSAYAKAホール 大ホール（大阪府）で開催される。チケットは先着にて受付中。演歌の魅力を最大限に引き出す構成と演出が毎回好評を博している注目シリーズの最新作。</p>
+                <span class="news-full-meta">2026年7月11日</span>
+              </div>
+            </a>
+
+            <a href="news11.html" class="news-full-item" data-category="concert">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-event">コンサート情報</span>
+                <span class="news-full-title">島津亜矢 40周年記念コンサートツアー2026「ありがとう」全国で開催決定　福井・名古屋・大阪など各地で公演</span>
+                <p class="news-full-excerpt">島津亜矢のデビュー40周年記念ツアー「ありがとう」が全国各地で開催される。福井（4月11日）、名古屋（6月18日）、大阪（7月30日）など多数の公演が予定されており、40年間の歌手人生への感謝を込めたステージに注目が集まっている。</p>
+                <span class="news-full-meta">2026年4月</span>
+              </div>
+            </a>
+
+            <a href="news10.html" class="news-full-item" data-category="concert">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-event">コンサート情報</span>
+                <span class="news-full-title">氷川きよし、新歌舞伎座（大阪）で4月公演開催　チケット好評受付中</span>
+                <p class="news-full-excerpt">氷川きよしが2026年4月15日より大阪・新歌舞伎座にて公演を開催する。「箱根八里の半次郎」「きよしのズンドコ節」など数々のヒット曲を持つ演歌界のスターが、由緒ある劇場の舞台で魅せる渾身のステージ。チケットは各プレイガイドにて好評受付中。</p>
+                <span class="news-full-meta">2026年4月15日</span>
+              </div>
+            </a>
+
+            <a href="news09.html" class="news-full-item" data-category="single">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-artist">新曲情報</span>
+                <span class="news-full-title">竹川美子、新曲「流氷海峡」を4月22日発売　北の海の情景を情感豊かに描く</span>
+                <p class="news-full-excerpt">竹川美子が新曲「流氷海峡」を2026年4月22日にリリースした。オホーツク海を漂う流氷を舞台に、遠く離れた人への想いを切々と歌い上げた骨太の演歌。竹川美子の力強くも繊細な歌声が北の海の厳しさと美しさを見事に表現した、演歌ファン待望の一曲となっている。</p>
+                <span class="news-full-meta">2026年4月22日</span>
+              </div>
+            </a>
+
+            <a href="news07.html" class="news-full-item" data-category="single">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-artist">新曲情報</span>
+                <span class="news-full-title">石川さゆり、新曲「日々呉々と」を4月8日リリース　しみじみと人生を歌った渾身の一曲</span>
+                <p class="news-full-excerpt">石川さゆりが新曲「日々呉々と」を2026年4月8日にリリースした。日々の暮らしの中で積み重ねてきた想いや後悔、そして前へ進もうとする人間の強さを情感豊かに描いた楽曲。2026年3月から9月にかけて全国コンサートツアーも予定されており、新曲を携えたステージへの期待が高まっている。</p>
+                <span class="news-full-meta">2026年4月8日</span>
+              </div>
+            </a>
+
+            <a href="news08.html" class="news-full-item" data-category="single">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-artist">新曲情報</span>
+                <span class="news-full-title">葵かを里、新曲「白糸恋情歌」を4月1日発売　情感あふれる王道演歌で新たな一面を披露</span>
+                <p class="news-full-excerpt">葵かを里が新曲「白糸恋情歌」を2026年4月1日にリリースした。淡い恋の始まりから切ない別れまでを流れるように描いた楽曲で、透き通るような声質を活かした歌唱が楽曲の世界観をより深く表現している。全国のカラオケ喫茶や歌謡ショーでも人気の高い実力派歌手による注目作。</p>
+                <span class="news-full-meta">2026年4月1日</span>
+              </div>
+            </a>
+
+            <a href="news01.html" class="news-full-item" data-category="concert">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-event">コンサート情報</span>
+                <span class="news-full-title">石川さゆり、2026年全国コンサートツアー開催決定　3月27日から9月まで各地で公演</span>
+                <p class="news-full-excerpt">石川さゆりが2026年3月27日から9月26日にかけて全国コンサートツアーを実施する。新潟・富山・和歌山・東京・埼玉・奈良・大阪・岩手・兵庫など多数の都道府県で公演が予定されており、ファン待望のツアーとなる。最新作のシングル「越後瞽女（えちごごぜ）」および配信限定シングル「ダメ男数え唄」もあわせて注目を集めている。</p>
+                <span class="news-full-meta">2026年3月</span>
+              </div>
+            </a>
+
+            <a href="news02.html" class="news-full-item" data-category="single">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-artist">新曲情報</span>
+                <span class="news-full-title">細川たかし、芸道50周年記念曲第2弾「カムイ岬」リリース　全編AI映像のMVも話題に</span>
+                <p class="news-full-excerpt">細川たかしが芸道50周年記念曲の第2弾「カムイ岬」を2026年1月7日にリリースした。北海道積丹半島を舞台に日本海の哀愁と悲恋を歌い上げた本格演歌で、ミュージックビデオは全編にわたって最新の生成AIを活用して制作されており話題を呼んでいる。50年の芸道を締めくくるにふさわしい渾身の一曲だ。</p>
+                <span class="news-full-meta">2026年1月7日</span>
+              </div>
+            </a>
+
+            <a href="news03.html" class="news-full-item" data-category="artist">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-artist">歌手情報</span>
+                <span class="news-full-title">彩青、デビュー初の恋歌「門前仲町の恋ざくら」を発売　23歳・デビュー7年目の新境地</span>
+                <p class="news-full-excerpt">デビュー7年目・23歳の彩青が8枚目の新曲「門前仲町の恋ざくら」を日本コロムビアより2026年1月7日にリリースした。これまでの楽曲と一線を画し、デビュー以来初めて恋歌に挑戦した注目作。若き実力派が新たな表情を見せる意欲作として、ファンや業界関係者から大きな反響が寄せられている。</p>
+                <span class="news-full-meta">2026年1月7日</span>
+              </div>
+            </a>
+
+            <a href="news04.html" class="news-full-item" data-category="single">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-artist">新曲情報</span>
+                <span class="news-full-title">福田こうへい、新曲「志〜こころざし〜」を元旦リリース　荒木とよひさ×弦哲也の最強コンビが制作</span>
+                <p class="news-full-excerpt">福田こうへいが新曲「志〜こころざし〜」を2026年1月1日に元旦リリースした。作詩・荒木とよひさ、作曲・弦哲也という演歌界最強コンビが手がけた、スケール感あふれる力強い演歌。2025年元旦リリースの「匠〜たくみ〜」に続く元旦シングルで、"日本男児の生き様"をテーマにした意欲作となっている。</p>
+                <span class="news-full-meta">2026年1月1日</span>
+              </div>
+            </a>
+
+            <a href="news05.html" class="news-full-item" data-category="concert">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-event">イベント</span>
+                <span class="news-full-title">「令和にっぽん！演歌の夢まつり2025」東京公演開催　北島三郎ら豪華出演陣が東京国際フォーラムに集結</span>
+                <p class="news-full-excerpt">豪華演歌歌手が一堂に会する大型イベント「令和にっぽん！演歌の夢まつり2025」が2025年5月13日に東京国際フォーラム ホールAで開催された。北島三郎、鳥羽一郎、神野美伽、水森かおり、北山たけし、大江裕、辰巳ゆうとほか多数が出演。仙台・金沢・愛知・熊本など全国各地でも公演が行われ、演歌ファンを大いに沸かせた。</p>
+                <span class="news-full-meta">2025年5月13日</span>
+              </div>
+            </a>
+
+            <a href="news06.html" class="news-full-item" data-category="artist">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-artist">歌手情報</span>
+                <span class="news-full-title">辰巳ゆうと「運命の夏」がオリコン週間演歌ランキング1位　総合シングルでも4位の快挙</span>
+                <p class="news-full-excerpt">辰巳ゆうとの9thシングル「運命の夏」が、オリコン週間演歌・歌謡シングルランキング（2025年2月10日付）で見事1位を獲得した。さらに総合シングルランキングでも4位に入る快挙を達成。リリースを記念して東京・大阪での大規模なサイン会・握手会も開催され、会場には多くのファンが詰めかけた。</p>
+                <span class="news-full-meta">2025年2月10日</span>
+              </div>
+            </a>
+
+
+          </div>
+
+          <div class="pagination" id="pagination"></div>
+
+        </div>
+      </main>
+
+      <aside>
+        <div class="sidebar-box">
+          <div class="sidebar-title">最新号のご案内</div>
+          <div class="magazine-cover" style="padding:12px; background:#111;">
+            <a href="../magazine.html">
+              <img src="../images/cover_2026_03.jpg" alt="月刊カラオケエース 2026年3月号 東海版" style="width:100%; display:block; border:3px solid #b8860b; box-shadow:4px 4px 12px rgba(0,0,0,0.6);">
+            </a>
+            <div class="magazine-issue" style="margin-top:8px;">2026年3月号（東海版）</div>
+          </div>
+          <div class="sidebar-content">
+            <p style="font-size:0.8rem; color:#555; margin-bottom:8px; line-height:1.7;">
+              <strong>巻頭：</strong>多岐川舞子「お別れメランコリー」<br>
+              <strong>取材：</strong>三船和子 / 黒川真一朗 / 知里<br>
+              　　　野中さおり / 平山花羽 / Shizuka<br>
+              <strong>定価：</strong>550円（税込）
+            </p>
+            <a href="../magazine.html" class="btn-primary">定期購読のご案内</a>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-title">カテゴリ</div>
+          <div class="sidebar-content">
+            <ul class="footer-links">
+              <li><a href="../news/index.html">📰 最新ニュース</a></li>
+              <li><a href="../artists/index.html">🎤 歌手情報</a></li>
+              <li><a href="../events/index.html">📅 イベント</a></li>
+              <li><a href="../ranking/index.html">🏆 ランキング</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="logo-title" style="font-family:'Noto Serif JP',serif; color:white;">月刊カラオケ<span style="color:#c0392b;">エース</span></span>
+        <p class="footer-desc">演歌・歌謡曲を愛するすべての方に向けた専門情報誌です。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">コンテンツ</div>
+        <ul class="footer-links">
+          <li><a href="../news/index.html">最新ニュース</a></li>
+          <li><a href="../artists/index.html">歌手情報</a></li>
+          <li><a href="../events/index.html">イベント</a></li>
+          <li><a href="../ranking/index.html">ランキング</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">サービス</div>
+        <ul class="footer-links">
+          <li><a href="../contact.html">掲載・広告のご案内</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">会社情報</div>
+        <ul class="footer-links">
+          <li><a href="#">運営会社</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 月刊カラオケエース All Rights Reserved.</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    var ITEMS_PER_PAGE = 10;
+    var currentPage = 1;
+    var currentFilter = 'all';
+
+    function getFilteredItems() {
+      return Array.from(document.querySelectorAll('.news-full-item')).filter(function(item) {
+        return currentFilter === 'all' || item.getAttribute('data-category') === currentFilter;
+      });
+    }
+
+    function renderPage(page) {
+      currentPage = page;
+      var filtered = getFilteredItems();
+      var totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+      var start = (page - 1) * ITEMS_PER_PAGE;
+      var end = start + ITEMS_PER_PAGE;
+
+      // 全件非表示にしてからページ分だけ表示
+      document.querySelectorAll('.news-full-item').forEach(function(item) {
+        item.style.display = 'none';
+      });
+      filtered.slice(start, end).forEach(function(item) {
+        item.style.display = '';
+      });
+
+      // ページネーション生成
+      var pagination = document.getElementById('pagination');
+      pagination.innerHTML = '';
+
+      if (totalPages <= 1) return;
+
+      function makeBtn(label, targetPage, isActive) {
+        var a = document.createElement('a');
+        a.href = '#';
+        a.className = 'page-btn' + (isActive ? ' active' : '');
+        a.textContent = label;
+        a.addEventListener('click', function(e) {
+          e.preventDefault();
+          renderPage(targetPage);
+          window.scrollTo(0, 0);
+        });
+        return a;
+      }
+
+      if (currentPage > 1) {
+        pagination.appendChild(makeBtn('‹ 前へ', currentPage - 1, false));
+      }
+      for (var i = 1; i <= totalPages; i++) {
+        pagination.appendChild(makeBtn(i, i, i === currentPage));
+      }
+      if (currentPage < totalPages) {
+        pagination.appendChild(makeBtn('次へ ›', currentPage + 1, false));
+      }
+    }
+
+    document.querySelectorAll('.filter-tab').forEach(function(tab) {
+      tab.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.filter-tab').forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        currentFilter = this.getAttribute('data-filter');
+        renderPage(1);
+      });
+    });
+
+    renderPage(1);
+  </script>
+</body>
+</html>

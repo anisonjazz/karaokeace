@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>最新号・定期購読｜月刊カラオケエース</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .magazine-feature {
+      background: white;
+      padding: 30px;
+    }
+    .issue-hero {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+      align-items: flex-start;
+    }
+    .issue-cover-large {
+      width: 180px;
+      height: 252px;
+      background: linear-gradient(135deg, #c0392b, #8b0000);
+      border: 4px solid var(--gold);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 6px 6px 20px rgba(0,0,0,0.3);
+    }
+    .issue-cover-text {
+      font-family: var(--font-jp);
+      color: white;
+      text-align: center;
+      line-height: 1.8;
+    }
+    .issue-cover-text .big { font-size: 1.2rem; font-weight: 700; }
+    .issue-cover-text .small { font-size: 0.7rem; color: #ddd; }
+    .issue-info h2 {
+      font-family: var(--font-jp);
+      font-size: 1.4rem;
+      color: var(--dark-red);
+      margin-bottom: 8px;
+    }
+    .issue-info .issue-date {
+      font-size: 0.85rem;
+      color: var(--mid-gray);
+      margin-bottom: 16px;
+    }
+    .issue-contents {
+      background: #faf7f0;
+      border-left: 4px solid var(--gold);
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .issue-contents h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+      letter-spacing: 0.1em;
+    }
+    .issue-contents ul {
+      list-style: none;
+      padding: 0;
+    }
+    .issue-contents ul li {
+      font-size: 0.85rem;
+      padding: 4px 0;
+      border-bottom: 1px dotted #ddd;
+      color: var(--black);
+    }
+    .issue-contents ul li::before {
+      content: "◆ ";
+      color: var(--red);
+      font-size: 0.7rem;
+    }
+    .plan-card {
+      border: 2px solid var(--border);
+      padding: 20px;
+      text-align: center;
+      background: white;
+    }
+    .plan-card.featured {
+      border-color: var(--gold);
+      position: relative;
+    }
+    .plan-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 12px;
+      white-space: nowrap;
+    }
+    .plan-name {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+    .plan-price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--dark-red);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .plan-price span {
+      font-size: 0.9rem;
+      color: var(--mid-gray);
+    }
+    .plan-period {
+      font-size: 0.75rem;
+      color: var(--mid-gray);
+      margin-bottom: 14px;
+    }
+    .plan-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 16px;
+      padding: 0;
+    }
+    .plan-features li {
+      font-size: 0.8rem;
+      padding: 4px 0;
+      border-bottom: 1px dotted #eee;
+      color: var(--mid-gray);
+    }
+    .plan-features li::before {
+      content: "✓ ";
+      color: var(--red);
+      font-weight: 700;
+    }
+    .btn-plan {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .btn-plan-primary {
+      background: var(--red);
+      color: white;
+    }
+    .btn-plan-primary:hover { background: var(--dark-red); color: white; }
+    .btn-plan-secondary {
+      border: 2px solid var(--red);
+      color: var(--red);
+    }
+    .btn-plan-secondary:hover { background: var(--red); color: white; }
+    @media (max-width: 600px) {
+      .issue-hero { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <header style="background:#fff; border-bottom:4px solid #c0392b;">
+    <div class="header-top" style="background:#f5f5f5; color:#888;">月刊カラオケエース公式ウェブサイト｜演歌・歌謡曲の総合情報</div>
+    <div class="header-main" style="background:#fff;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990" style="height:80px; width:auto; display:block;">
+      </a>
+      <div class="header-catch" style="color:#555;">
+        演歌・歌謡曲を愛する人のためのポータルサイト
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="news/index.html">ニュース</a></li>
+        <li><a href="artists/index.html">歌手情報</a></li>
+        <li><a href="events/index.html">イベント</a></li>
+        <li><a href="ranking/index.html">ランキング</a></li>
+        <li><a href="magazine.html" class="active">最新号</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a><span>最新号・定期購読</span>
+  </div>
+
+  <div class="container">
+    <div class="layout-main">
+      <main>
+
+        <!-- 最新号 -->
+        <div class="section-box">
+          <h1 class="section-title"><span class="icon">📖</span> 最新号のご案内</h1>
+          <div class="magazine-feature">
+            <div class="issue-hero">
+              <a href="contact.html">
+                <img src="images/cover_2026_03.jpg" alt="月刊カラオケエース 2026年3月号 東海版" style="width:180px; display:block; border:4px solid #b8860b; box-shadow:6px 6px 20px rgba(0,0,0,0.4);">
+              </a>
+              <div class="issue-info">
+                <h2>2026年3月号（東海版）</h2>
+                <div class="issue-date">2026年2月13日発売（毎月15日発行）通巻427号 ／ 定価：550円（税込）</div>
+                <div class="issue-contents">
+                  <h3>今月の主な内容</h3>
+                  <ul>
+                    <li>【巻頭特別インタビュー】多岐川舞子「お別れメランコリー」</li>
+                    <li>【歌手取材記事・DAM配信番号付き】三船和子（徳間）</li>
+                    <li>【歌手取材記事】黒川真一朗（徳間）／知里（クラウン）</li>
+                    <li>【歌手取材記事】野中さおり（徳間）／平山花羽（徳間）</li>
+                    <li>【歌手取材記事】Shizuka（CIMS）</li>
+                    <li>【第56回】走裕介の走写真館</li>
+                    <li>【第30回】祥夕子のここロウタらいむらいと</li>
+                    <li>【第11回】カラオケで長寿さん</li>
+                    <li>【第6回】沢田正人のモノ知る博士</li>
+                    <li>【DAM新譜案内】最新カラオケ新譜情報掲載</li>
+                  </ul>
+                </div>
+                <a href="contact.html" class="btn-primary" style="display:inline-block; padding:10px 24px;">書店・購入のお問い合わせ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 定期購読 -->
+        <div class="section-box">
+          <h2 class="section-title"><span class="icon">📬</span> 定期購読のご案内</h2>
+          <div class="magazine-feature">
+            <p style="font-size:0.88rem; color:var(--mid-gray); margin-bottom:24px; line-height:1.8;">
+              定期購読をお申し込みいただくと、毎月発売日に確実にお手元へお届けします。
+            </p>
+
+            <div style="max-width:320px; margin:0 auto;">
+              <div class="plan-card featured">
+                <span class="plan-badge">年間購読</span>
+                <div class="plan-name">年間購読</div>
+                <div class="plan-price">8,800<span>円</span></div>
+                <div class="plan-period">（税込）</div>
+                <ul class="plan-features">
+                  <li>毎月自宅にお届け</li>
+                  <li>送料無料</li>
+                </ul>
+                <a href="contact.html" class="btn-plan btn-plan-primary">申し込む</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <aside>
+        <div class="sidebar-box">
+          <div class="sidebar-title">カテゴリ</div>
+          <div class="sidebar-content">
+            <ul class="footer-links">
+              <li><a href="news/index.html">📰 最新ニュース</a></li>
+              <li><a href="artists/index.html">🎤 歌手情報</a></li>
+              <li><a href="events/index.html">📅 イベント</a></li>
+              <li><a href="ranking/index.html">🏆 ランキング</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="contact.html" class="sidebar-banner">
+          <div class="sidebar-banner-text">
+            📣 カラオケ喫茶オーナー様へ<br>
+            貴店の情報を掲載しませんか？
+          </div>
+          <div class="sidebar-banner-sub">広告・掲載のお問い合わせはこちら</div>
+        </a>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="logo-title" style="font-family:'Noto Serif JP',serif; color:white;">月刊カラオケ<span style="color:#c0392b;">エース</span></span>
+        <p class="footer-desc">演歌・歌謡曲を愛するすべての方に向けた専門情報誌です。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">コンテンツ</div>
+        <ul class="footer-links">
+          <li><a href="news/index.html">最新ニュース</a></li>
+          <li><a href="artists/index.html">歌手情報</a></li>
+          <li><a href="events/index.html">イベント</a></li>
+          <li><a href="ranking/index.html">ランキング</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">サービス</div>
+        <ul class="footer-links">
+          <li><a href="contact.html">掲載・広告のご案内</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">会社情報</div>
+        <ul class="footer-links">
+          <li><a href="#">運営会社</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 月刊カラオケエース All Rights Reserved.</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

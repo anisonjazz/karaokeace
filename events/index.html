@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="演歌・歌謡曲のコンサート・イベント情報。全国の公演スケジュールをご紹介します。">
+  <title>イベント・コンサート情報｜月刊カラオケエース</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .event-full-item {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+      transition: background 0.15s;
+    }
+    .event-full-item:hover { background: #faf7f0; }
+    .event-full-date {
+      background: var(--dark-red);
+      color: white;
+      text-align: center;
+      padding: 12px 16px;
+      min-width: 72px;
+      flex-shrink: 0;
+    }
+    .event-full-month { font-size: 0.7rem; opacity: 0.85; }
+    .event-full-day { font-size: 2rem; font-weight: 700; line-height: 1.1; }
+    .event-full-dow { font-size: 0.7rem; opacity: 0.85; }
+    .event-full-content { flex: 1; }
+    .event-full-title {
+      font-family: var(--font-jp);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .event-full-title:hover { color: var(--dark-red); }
+    .event-detail { font-size: 0.82rem; color: var(--mid-gray); margin-bottom: 4px; }
+    .event-detail strong { color: var(--black); }
+    .event-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 2px;
+      margin-right: 4px;
+    }
+    .badge-concert { background: #e8f4fd; color: #1a6fa8; }
+    .badge-release { background: #fdf0e8; color: #b5510a; }
+    .badge-event { background: #edf8e8; color: #2d7a1a; }
+    .badge-cafe { background: #f8e8f8; color: #7a1a7a; }
+    .month-divider {
+      background: #f5f0e8;
+      padding: 10px 20px;
+      font-family: var(--font-jp);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--dark-red);
+      border-bottom: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+  <header style="background:#fff; border-bottom:4px solid #c0392b;">
+    <div class="header-top" style="background:#f5f5f5; color:#888;">月刊カラオケエース公式ウェブサイト｜演歌・歌謡曲の総合情報</div>
+    <div class="header-main" style="background:#fff;">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990" style="height:80px; width:auto; display:block;">
+      </a>
+      <div class="header-catch" style="color:#555;">
+        演歌・歌謡曲を愛する人のためのポータルサイト
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <ul>
+        <li><a href="../index.html">トップ</a></li>
+        <li><a href="../news/index.html">ニュース</a></li>
+        <li><a href="../artists/index.html">歌手情報</a></li>
+        <li><a href="index.html" class="active">イベント</a></li>
+        <li><a href="../ranking/index.html">ランキング</a></li>
+        <li><a href="../magazine.html">最新号</a></li>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">トップ</a><span>イベント・コンサート情報</span>
+  </div>
+
+  <div class="container">
+    <div class="layout-main">
+      <main>
+        <div class="section-box">
+          <h1 class="section-title"><span class="icon">📅</span> イベント・コンサート情報</h1>
+
+          <!-- 4月 -->
+          <div class="month-divider">2026年 4月｜愛知県</div>
+          <div>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">4月</div>
+                <div class="event-full-day">6</div>
+                <div class="event-full-dow">月</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">夢スターポップス歌謡祭 津島公演</span>
+                <div class="event-detail"><strong>会場：</strong>津島市文化会館 大ホール（愛知県津島市）</div>
+                <div class="event-detail"><strong>出演：</strong>錦野旦、松崎しげる、狩人、姿月あさと ほか</div>
+                <div class="event-detail"><strong>料金：</strong>プレミアム 8,000円 ／ SS席 6,800円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">4月</div>
+                <div class="event-full-day">8</div>
+                <div class="event-full-dow">水</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">夢スターポップス歌謡祭 岡崎公演</span>
+                <div class="event-detail"><strong>会場：</strong>岡崎市民会館 あおいホール（愛知県岡崎市）</div>
+                <div class="event-detail"><strong>出演：</strong>錦野旦、松崎しげる、狩人、姿月あさと ほか</div>
+                <div class="event-detail"><strong>料金：</strong>プレミアム 8,000円 ／ SS席 6,800円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">4月</div>
+                <div class="event-full-day">9</div>
+                <div class="event-full-dow">木</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">夢スターポップス歌謡祭 名古屋公演</span>
+                <div class="event-detail"><strong>会場：</strong>Niterra日本特殊陶業市民会館 フォレストホール（名古屋市中区金山）</div>
+                <div class="event-detail"><strong>時間：</strong>開演 18:00</div>
+                <div class="event-detail"><strong>出演：</strong>錦野旦、松崎しげる、狩人、姿月あさと ほか</div>
+                <div class="event-detail"><strong>料金：</strong>プレミアム 8,000円 ／ SS席 6,800円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">4月</div>
+                <div class="event-full-day">21</div>
+                <div class="event-full-dow">火</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">綾小路きみまろ 爆笑スーパーライブ in 名古屋</span>
+                <div class="event-detail"><strong>会場：</strong>Niterra日本特殊陶業市民会館 フォレストホール（名古屋市中区金山）</div>
+                <div class="event-detail"><strong>時間：</strong>開演 14:00</div>
+                <div class="event-detail"><strong>料金：</strong>5,500円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">4月</div>
+                <div class="event-full-day">24</div>
+                <div class="event-full-dow">金</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">梅沢富美男劇団特別公演「アッ！とおどろく夢芝居」刈谷公演</span>
+                <div class="event-detail"><strong>会場：</strong>刈谷市総合文化センター アイリス大ホール（愛知県刈谷市）</div>
+                <div class="event-detail"><strong>時間：</strong>昼の部 開場 13:30 ／ 開演 14:00 ／ 夜の部 開場 17:30 ／ 開演 18:00</div>
+                <div class="event-detail"><strong>出演：</strong>梅沢富美男、研ナオコ、竜小太郎、門戸竜二</div>
+                <div class="event-detail"><strong>料金：</strong>全席指定 8,800円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">4月</div>
+                <div class="event-full-day">24</div>
+                <div class="event-full-dow">金</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">辰巳ゆうと スペシャルコンサートツアー2026 名古屋公演</span>
+                <div class="event-detail"><strong>会場：</strong>Niterra日本特殊陶業市民会館 ビレッジホール（名古屋市中区金山）</div>
+                <div class="event-detail"><strong>時間：</strong>開場 15:00 ／ 開演 15:30</div>
+                <div class="event-detail"><strong>料金：</strong>全席指定 7,500円</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 5月 -->
+          <div class="month-divider">2026年 5月｜愛知県</div>
+          <div>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">5月</div>
+                <div class="event-full-day">12</div>
+                <div class="event-full-dow">火</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">天童よしみコンサート（御園座創立130周年記念）</span>
+                <div class="event-detail"><strong>会場：</strong>御園座（名古屋市中区栄）</div>
+                <div class="event-detail"><strong>時間：</strong>開演 14:00</div>
+                <div class="event-detail"><strong>料金：</strong>S席 10,000円 ／ A席 4,000円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">5月</div>
+                <div class="event-full-day">14</div>
+                <div class="event-full-dow">木</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">里見浩太朗コンサート（御園座創立130周年記念）</span>
+                <div class="event-detail"><strong>会場：</strong>御園座（名古屋市中区栄）</div>
+                <div class="event-detail"><strong>時間：</strong>開演 14:00</div>
+                <div class="event-detail"><strong>料金：</strong>S席 10,000円 ／ A席 4,000円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">5月</div>
+                <div class="event-full-day">23</div>
+                <div class="event-full-dow">土</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">五木ひろし スペシャルコンサート（御園座創立130周年記念）①</span>
+                <div class="event-detail"><strong>会場：</strong>御園座（名古屋市中区栄）</div>
+                <div class="event-detail"><strong>時間：</strong>開場 14:15 ／ 開演 15:00</div>
+                <div class="event-detail"><strong>料金：</strong>S席 12,000円 ／ A席 5,000円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">5月</div>
+                <div class="event-full-day">24</div>
+                <div class="event-full-dow">日</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">五木ひろし スペシャルコンサート（御園座創立130周年記念）②</span>
+                <div class="event-detail"><strong>会場：</strong>御園座（名古屋市中区栄）</div>
+                <div class="event-detail"><strong>時間：</strong>開場 11:15 ／ 開演 12:00</div>
+                <div class="event-detail"><strong>料金：</strong>S席 12,000円 ／ A席 5,000円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">5月</div>
+                <div class="event-full-day">25</div>
+                <div class="event-full-dow">月</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">坂本冬美 40周年記念コンサート「今日から明日へ」名古屋公演</span>
+                <div class="event-detail"><strong>会場：</strong>愛知県芸術劇場 大ホール（名古屋市東区栄）</div>
+                <div class="event-detail"><strong>時間：</strong>開場 14:00 ／ 開演 14:30</div>
+                <div class="event-detail"><strong>料金：</strong>全席指定 7,700円</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 6月 -->
+          <div class="month-divider">2026年 6月｜愛知県</div>
+          <div>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">6月</div>
+                <div class="event-full-day">10</div>
+                <div class="event-full-dow">水</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-event">大型イベント</span>
+                <span class="event-full-title">令和にっぽん！演歌の夢まつり2026 名古屋公演</span>
+                <div class="event-detail"><strong>会場：</strong>愛知県芸術劇場 大ホール（名古屋市東区東桜）</div>
+                <div class="event-detail"><strong>時間：</strong>11:00の部 ／ 15:00の部（2公演）</div>
+                <div class="event-detail"><strong>料金：</strong>全席指定 13,500円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">6月</div>
+                <div class="event-full-day">11</div>
+                <div class="event-full-dow">木</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">梅沢富美男劇団特別公演「アッ！とおどろく夢芝居」名古屋公演</span>
+                <div class="event-detail"><strong>会場：</strong>愛知県芸術劇場 大ホール（名古屋市東区栄）</div>
+                <div class="event-detail"><strong>時間：</strong>昼の部 開場 13:30 ／ 開演 14:00 ／ 夜の部 開場 17:30 ／ 開演 18:00</div>
+                <div class="event-detail"><strong>出演：</strong>梅沢富美男、研ナオコ、竜小太郎、門戸竜二</div>
+                <div class="event-detail"><strong>料金：</strong>全席指定 8,800円</div>
+              </div>
+            </a>
+            <a href="#" class="event-full-item">
+              <div class="event-full-date">
+                <div class="event-full-month">6月</div>
+                <div class="event-full-day">18</div>
+                <div class="event-full-dow">木</div>
+              </div>
+              <div class="event-full-content">
+                <span class="event-badge badge-concert">コンサート</span>
+                <span class="event-full-title">島津亜矢 40周年記念コンサートツアー2026「ありがとう」名古屋公演</span>
+                <div class="event-detail"><strong>会場：</strong>Niterra日本特殊陶業市民会館 フォレストホール（名古屋市中区金山）</div>
+                <div class="event-detail"><strong>時間：</strong>開場 13:30 ／ 開演 14:00</div>
+                <div class="event-detail"><strong>料金：</strong>全席指定 8,000円</div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </main>
+
+      <aside>
+        <div class="sidebar-box">
+          <div class="sidebar-title">最新号のご案内</div>
+          <div class="magazine-cover" style="padding:12px; background:#111;">
+            <a href="../magazine.html">
+              <img src="../images/cover_2026_03.jpg" alt="月刊カラオケエース 2026年3月号 東海版" style="width:100%; display:block; border:3px solid #b8860b; box-shadow:4px 4px 12px rgba(0,0,0,0.6);">
+            </a>
+            <div class="magazine-issue" style="margin-top:8px;">2026年3月号（東海版）</div>
+          </div>
+          <div class="sidebar-content">
+            <p style="font-size:0.8rem; color:#555; margin-bottom:8px; line-height:1.7;">
+              <strong>巻頭：</strong>多岐川舞子「お別れメランコリー」<br>
+              <strong>取材：</strong>三船和子 / 黒川真一朗 / 知里<br>
+              　　　野中さおり / 平山花羽 / Shizuka<br>
+              <strong>定価：</strong>550円（税込）
+            </p>
+            <a href="../magazine.html" class="btn-primary">定期購読のご案内</a>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-title">カテゴリ</div>
+          <div class="sidebar-content">
+            <ul class="footer-links">
+              <li><a href="../news/index.html">📰 最新ニュース</a></li>
+              <li><a href="../artists/index.html">🎤 歌手情報</a></li>
+              <li><a href="index.html">📅 イベント</a></li>
+              <li><a href="../ranking/index.html">🏆 ランキング</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="logo-title" style="font-family:'Noto Serif JP',serif; color:white;">月刊カラオケ<span style="color:#c0392b;">エース</span></span>
+        <p class="footer-desc">演歌・歌謡曲を愛するすべての方に向けた専門情報誌です。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">コンテンツ</div>
+        <ul class="footer-links">
+          <li><a href="../news/index.html">最新ニュース</a></li>
+          <li><a href="../artists/index.html">歌手情報</a></li>
+          <li><a href="index.html">イベント</a></li>
+          <li><a href="../ranking/index.html">ランキング</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">サービス</div>
+        <ul class="footer-links">
+          <li><a href="../contact.html">掲載・広告のご案内</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">会社情報</div>
+        <ul class="footer-links">
+          <li><a href="#">運営会社</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 月刊カラオケエース All Rights Reserved.</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

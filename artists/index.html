@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="演歌・歌謡曲歌手のプロフィール・活動情報。新曲やコンサート情報もあわせてご紹介します。">
+  <title>歌手情報｜月刊カラオケエース</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .artist-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .artist-full-card {
+      background: white;
+      padding: 20px 16px;
+      text-align: center;
+      transition: background 0.15s;
+      display: block;
+    }
+    .artist-full-card:hover { background: #faf7f0; }
+    .artist-full-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #c0392b33, #b8860b33);
+      margin: 0 auto 12px;
+      border: 3px solid var(--light-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+    .artist-full-name {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .artist-full-name-en {
+      font-size: 0.7rem;
+      color: #999;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .artist-full-genre {
+      display: inline-block;
+      font-size: 0.7rem;
+      background: #f0ece0;
+      color: var(--gold);
+      padding: 2px 8px;
+      border: 1px solid #e0d8c0;
+      border-radius: 2px;
+      margin-bottom: 8px;
+    }
+    .artist-full-latest {
+      font-size: 0.75rem;
+      color: var(--mid-gray);
+      line-height: 1.5;
+    }
+    .artist-full-latest strong {
+      color: var(--dark-red);
+      display: block;
+      font-size: 0.68rem;
+      margin-bottom: 2px;
+    }
+    .search-bar {
+      background: white;
+      padding: 16px;
+      display: flex;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .search-bar input {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+    }
+    .search-bar button {
+      padding: 8px 20px;
+      background: var(--red);
+      color: white;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: var(--font-sans);
+    }
+    .kana-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      background: white;
+      border-bottom: 2px solid var(--red);
+    }
+    .kana-tab {
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--mid-gray);
+      text-decoration: none;
+      border-right: 1px solid var(--border);
+      cursor: pointer;
+      background: white;
+      border-top: none;
+      border-left: none;
+      border-bottom: none;
+      font-family: var(--font-sans);
+      transition: all 0.15s;
+    }
+    .kana-tab:hover, .kana-tab.active {
+      background: var(--red);
+      color: white;
+    }
+    .artist-full-card.hidden {
+      display: none;
+    }
+    @media (max-width: 600px) {
+      .artist-full-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <header style="background:#fff; border-bottom:4px solid #c0392b;">
+    <div class="header-top" style="background:#f5f5f5; color:#888;">月刊カラオケエース公式ウェブサイト｜演歌・歌謡曲の総合情報</div>
+    <div class="header-main" style="background:#fff;">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990" style="height:80px; width:auto; display:block;">
+      </a>
+      <div class="header-catch" style="color:#555;">
+        演歌・歌謡曲を愛する人のためのポータルサイト
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <ul>
+        <li><a href="../index.html">トップ</a></li>
+        <li><a href="../news/index.html">ニュース</a></li>
+        <li><a href="index.html" class="active">歌手情報</a></li>
+        <li><a href="../events/index.html">イベント</a></li>
+        <li><a href="../ranking/index.html">ランキング</a></li>
+        <li><a href="../magazine.html">最新号</a></li>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">トップ</a><span>歌手情報</span>
+  </div>
+
+  <div class="container">
+    <div class="layout-main">
+      <main>
+        <div class="section-box">
+          <h1 class="section-title"><span class="icon">🎤</span> 歌手情報・プロフィール（名前をタップ）</h1>
+
+
+          <div class="kana-tabs">
+            <button class="kana-tab active" data-row="all">全て</button>
+            <button class="kana-tab" data-row="a">あ行</button>
+            <button class="kana-tab" data-row="ka">か行</button>
+            <button class="kana-tab" data-row="sa">さ行</button>
+            <button class="kana-tab" data-row="ta">た行</button>
+            <button class="kana-tab" data-row="na">な行</button>
+            <button class="kana-tab" data-row="ha">は行</button>
+            <button class="kana-tab" data-row="ma">ま行</button>
+            <button class="kana-tab" data-row="ya">や行</button>
+            <button class="kana-tab" data-row="ra">ら行</button>
+            <button class="kana-tab" data-row="wa">わ行</button>
+          </div>
+
+          <div class="artist-full-grid">
+
+            <a href="http://h-miyama.migan.co.jp/" target="_blank" rel="noopener" class="artist-full-card" data-row="ma">
+              <div class="artist-full-name">三山ひろし</div>
+              <div class="artist-full-name-en">Hiroshi Miyama</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="http://www.kitajima-music.co.jp/sabu/" target="_blank" rel="noopener" class="artist-full-card" data-row="ka">
+              <div class="artist-full-name">北島三郎</div>
+              <div class="artist-full-name-en">Saburo Kitajima</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="http://www.kitajima-music.co.jp/yutaka/" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">大江裕</div>
+              <div class="artist-full-name-en">Yutaka Oe</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://kitayama-music.co.jp/" target="_blank" rel="noopener" class="artist-full-card" data-row="ka">
+              <div class="artist-full-name">北山たけし</div>
+              <div class="artist-full-name-en">Takeshi Kitayama</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://columbia.jp/artist-info/mizutanichieko/" target="_blank" rel="noopener" class="artist-full-card" data-row="ma">
+              <div class="artist-full-name">水谷千恵子</div>
+              <div class="artist-full-name-en">Chieko Mizutani</div>
+              <div class="artist-full-genre">演歌・歌謡曲</div>
+            </a>
+
+            <a href="https://ishikawasayuri.com/" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">石川さゆり</div>
+              <div class="artist-full-name-en">Sayuri Ishikawa</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://columbia.jp/artist-info/aki/" target="_blank" rel="noopener" class="artist-full-card" data-row="ya">
+              <div class="artist-full-name">八代亜紀</div>
+              <div class="artist-full-name-en">Aki Yashiro</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.shimazu-aya-koenkai.com/" target="_blank" rel="noopener" class="artist-full-card" data-row="sa">
+              <div class="artist-full-name">島津亜矢</div>
+              <div class="artist-full-name-en">Aya Shimazu</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://441930.jp/" target="_blank" rel="noopener" class="artist-full-card" data-row="ya">
+              <div class="artist-full-name">吉幾三</div>
+              <div class="artist-full-name-en">Ikizo Yoshi</div>
+              <div class="artist-full-genre">演歌・歌謡曲</div>
+            </a>
+
+            <a href="https://fuyumi-fc.com" target="_blank" rel="noopener" class="artist-full-card" data-row="sa">
+              <div class="artist-full-name">坂本冬美</div>
+              <div class="artist-full-name-en">Fuyumi Sakamoto</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.sachiko.co.jp" target="_blank" rel="noopener" class="artist-full-card" data-row="ka">
+              <div class="artist-full-name">小林幸子</div>
+              <div class="artist-full-name-en">Sachiko Kobayashi</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://sunmusic-gp.co.jp/talent/miyako_harumi/" target="_blank" rel="noopener" class="artist-full-card" data-row="ma">
+              <div class="artist-full-name">都はるみ</div>
+              <div class="artist-full-name-en">Harumi Miyako</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://yoshimi-tendo.com" target="_blank" rel="noopener" class="artist-full-card" data-row="ta">
+              <div class="artist-full-name">天童よしみ</div>
+              <div class="artist-full-name-en">Yoshimi Todo</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://hosokawa-music.jp/artist/takashi-hosokawa/" target="_blank" rel="noopener" class="artist-full-card" data-row="ha">
+              <div class="artist-full-name">細川たかし</div>
+              <div class="artist-full-name-en">Takashi Hosokawa</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="http://www.voicemusic.co.jp" target="_blank" rel="noopener" class="artist-full-card" data-row="ka">
+              <div class="artist-full-name">伍代夏子</div>
+              <div class="artist-full-name-en">Natsuko Godai</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://ayako.fanmo.jp" target="_blank" rel="noopener" class="artist-full-card" data-row="ha">
+              <div class="artist-full-name">藤あや子</div>
+              <div class="artist-full-name-en">Ayako Fuji</div>
+              <div class="artist-full-genre">演歌・歌謡曲</div>
+            </a>
+
+            <a href="http://kouzaikaori.com" target="_blank" rel="noopener" class="artist-full-card" data-row="ka">
+              <div class="artist-full-name">香西かおり</div>
+              <div class="artist-full-name-en">Kaori Kozai</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.jvcmusic.co.jp/yoko/" target="_blank" rel="noopener" class="artist-full-card" data-row="na">
+              <div class="artist-full-name">長山洋子</div>
+              <div class="artist-full-name-en">Yoko Nagayama</div>
+              <div class="artist-full-genre">演歌・歌謡曲</div>
+            </a>
+
+            <a href="http://www.nobue-matsubara.jp" target="_blank" rel="noopener" class="artist-full-card" data-row="ma">
+              <div class="artist-full-name">松原のぶえ</div>
+              <div class="artist-full-name-en">Nobue Matsubara</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://junko-ishihara.com" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">石原詢子</div>
+              <div class="artist-full-name-en">Junko Ishihara</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.okamidori.com" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">丘みどり</div>
+              <div class="artist-full-name-en">Midori Oka</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://ichikawayukino.com" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">市川由紀乃</div>
+              <div class="artist-full-name-en">Yukino Ichikawa</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.nagarapro.co.jp/talent/kaori-mizumori/" target="_blank" rel="noopener" class="artist-full-card" data-row="ma">
+              <div class="artist-full-name">水森かおり</div>
+              <div class="artist-full-name-en">Kaori Mizumori</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.teichiku.co.jp/teichiku/artist/konomi/" target="_blank" rel="noopener" class="artist-full-card" data-row="ma">
+              <div class="artist-full-name">杜このみ</div>
+              <div class="artist-full-name-en">Konomi Mori</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.nagarapro.co.jp/talent/misaki-iwasa/" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">岩佐美咲</div>
+              <div class="artist-full-name-en">Misaki Iwasa</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://shiina-sachiko.jp" target="_blank" rel="noopener" class="artist-full-card" data-row="sa">
+              <div class="artist-full-name">椎名佐千子</div>
+              <div class="artist-full-name-en">Sachiko Shiina</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.universal-music.co.jp/moriyama-aiko/" target="_blank" rel="noopener" class="artist-full-card" data-row="ma">
+              <div class="artist-full-name">森山愛子</div>
+              <div class="artist-full-name-en">Aiko Moriyama</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.yukimi-hanasaki.com" target="_blank" rel="noopener" class="artist-full-card" data-row="ha">
+              <div class="artist-full-name">花咲ゆき美</div>
+              <div class="artist-full-name-en">Yukimi Hanasaki</div>
+              <div class="artist-full-genre">演歌・歌謡曲</div>
+            </a>
+
+            <a href="https://www.crownrecord.co.jp/s/c01/artist/hayama/news?ima=5612&ct=ryuko" target="_blank" rel="noopener" class="artist-full-card" data-row="ha">
+              <div class="artist-full-name">羽山みずき</div>
+              <div class="artist-full-name-en">Mizuki Hayama</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://goldenmusic.co.jp/news/" target="_blank" rel="noopener" class="artist-full-card" data-row="na">
+              <div class="artist-full-name">中村美律子</div>
+              <div class="artist-full-name-en">Mitsuko Nakamura</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://columbia.jp/artist-info/madoka/" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">大石まどか</div>
+              <div class="artist-full-name-en">Madoka Oishi</div>
+              <div class="artist-full-genre">演歌・歌謡曲</div>
+            </a>
+
+            <a href="https://columbia.jp/artist-info/nishio/prof.html" target="_blank" rel="noopener" class="artist-full-card" data-row="na">
+              <div class="artist-full-name">西尾夕紀</div>
+              <div class="artist-full-name-en">Yuki Nishio</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.itsuki-hiroshi.co.jp" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">五木ひろし</div>
+              <div class="artist-full-name-en">Hiroshi Itsuki</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.jvcmusic.co.jp/mori/" target="_blank" rel="noopener" class="artist-full-card" data-row="ma">
+              <div class="artist-full-name">森進一</div>
+              <div class="artist-full-name-en">Shinichi Mori</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.crownrecord.co.jp/s/c01/artist/toba/news" target="_blank" rel="noopener" class="artist-full-card" data-row="ta">
+              <div class="artist-full-name">鳥羽一郎</div>
+              <div class="artist-full-name-en">Ichiro Toba</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.ans.co.jp/u/e-ohkawa/" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">大川栄策</div>
+              <div class="artist-full-name-en">Eisaku Okawa</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://yutakayamakawa.amebaownd.com" target="_blank" rel="noopener" class="artist-full-card" data-row="ya">
+              <div class="artist-full-name">山川豊</div>
+              <div class="artist-full-name-en">Yutaka Yamakawa</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://niinuma-kenji.com" target="_blank" rel="noopener" class="artist-full-card" data-row="na">
+              <div class="artist-full-name">新沼謙治</div>
+              <div class="artist-full-name-en">Kenji Niinuma</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="http://www.kadokawa-office.com/index.html" target="_blank" rel="noopener" class="artist-full-card" data-row="ka">
+              <div class="artist-full-name">角川博</div>
+              <div class="artist-full-name-en">Hiroshi Kadokawa</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://umezawatomio.jp" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">梅沢富美男</div>
+              <div class="artist-full-name-en">Tomio Umezawa</div>
+              <div class="artist-full-genre">演歌・歌謡曲</div>
+            </a>
+
+            <a href="https://www.yamauchikeisuke.com" target="_blank" rel="noopener" class="artist-full-card" data-row="ya">
+              <div class="artist-full-name">山内惠介</div>
+              <div class="artist-full-name-en">Keisuke Yamauchi</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://hashiriyusuke.com" target="_blank" rel="noopener" class="artist-full-card" data-row="ha">
+              <div class="artist-full-name">走裕介</div>
+              <div class="artist-full-name-en">Yusuke Hashiri</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://takeshimahiroshi.com" target="_blank" rel="noopener" class="artist-full-card" data-row="ta">
+              <div class="artist-full-name">竹島宏</div>
+              <div class="artist-full-name-en">Hiroshi Takeshima</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.up-front-create.com/takeshi_matsubara/" target="_blank" rel="noopener" class="artist-full-card" data-row="ma">
+              <div class="artist-full-name">松原健之</div>
+              <div class="artist-full-name-en">Takeshi Matsubara</div>
+              <div class="artist-full-genre">演歌・歌謡曲</div>
+            </a>
+
+            <a href="https://www.tatsumi-yuto.com" target="_blank" rel="noopener" class="artist-full-card" data-row="ta">
+              <div class="artist-full-name">辰巳ゆうと</div>
+              <div class="artist-full-name-en">Yuto Tatsumi</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.crownrecord.co.jp/s/c01/artist/ichijo/news" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">一条貫太</div>
+              <div class="artist-full-name-en">Kanta Ichijo</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://8823.click" target="_blank" rel="noopener" class="artist-full-card" data-row="ha">
+              <div class="artist-full-name">はやぶさ</div>
+              <div class="artist-full-name-en">Hayabusa</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://atsumi-jiro.jimdofree.com" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">渥美二郎</div>
+              <div class="artist-full-name-en">Jiro Atsumi</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.crownrecord.co.jp/s/c01/artist/harada-namito/news?ima=0538&ct=ryuko" target="_blank" rel="noopener" class="artist-full-card" data-row="ha">
+              <div class="artist-full-name">原田波人</div>
+              <div class="artist-full-name-en">Namito Harada</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://odajunpei.jp" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">小田純平</div>
+              <div class="artist-full-name-en">Junpei Oda</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://futami-1026.theblog.me" target="_blank" rel="noopener" class="artist-full-card" data-row="ha">
+              <div class="artist-full-name">二見颯一</div>
+              <div class="artist-full-name-en">Soichi Futami</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://asakamiho.com" target="_blank" rel="noopener" class="artist-full-card" data-row="a">
+              <div class="artist-full-name">朝花美穂</div>
+              <div class="artist-full-name-en">Miho Asaka</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="http://www.havmercy.co.jp/profile/takegawamiko/" target="_blank" rel="noopener" class="artist-full-card" data-row="ta">
+              <div class="artist-full-name">竹川美子</div>
+              <div class="artist-full-name-en">Miko Takegawa</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://monaki.fanpla.jp" target="_blank" rel="noopener" class="artist-full-card" data-row="ma">
+              <div class="artist-full-name">モナキ</div>
+              <div class="artist-full-name-en">Monaki</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.top-color.jp/?page_id=8060" target="_blank" rel="noopener" class="artist-full-card" data-row="ka">
+              <div class="artist-full-name">門松みゆき</div>
+              <div class="artist-full-name-en">Miyuki Kadomatsu</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+            <a href="https://www.crownmusic.co.jp/artist/kimuraTetsuji" target="_blank" rel="noopener" class="artist-full-card" data-row="ka">
+              <div class="artist-full-name">木村徹二</div>
+              <div class="artist-full-name-en">Tetsuji Kimura</div>
+              <div class="artist-full-genre">演歌</div>
+            </a>
+
+          </div>
+        </div>
+      </main>
+
+      <aside>
+        <div class="sidebar-box">
+          <div class="sidebar-title">最新号のご案内</div>
+          <div class="magazine-cover" style="padding:12px; background:#111;">
+            <a href="../magazine.html">
+              <img src="../images/cover_2026_03.jpg" alt="月刊カラオケエース 2026年3月号 東海版" style="width:100%; display:block; border:3px solid #b8860b; box-shadow:4px 4px 12px rgba(0,0,0,0.6);">
+            </a>
+            <div class="magazine-issue" style="margin-top:8px;">2026年3月号（東海版）</div>
+          </div>
+          <div class="sidebar-content">
+            <p style="font-size:0.8rem; color:#555; margin-bottom:8px; line-height:1.7;">
+              <strong>巻頭：</strong>多岐川舞子「お別れメランコリー」<br>
+              <strong>取材：</strong>三船和子 / 黒川真一朗 / 知里<br>
+              　　　野中さおり / 平山花羽 / Shizuka<br>
+              <strong>定価：</strong>550円（税込）
+            </p>
+            <a href="../magazine.html" class="btn-primary">定期購読のご案内</a>
+          </div>
+        </div>
+
+        <div class="sidebar-box">
+          <div class="sidebar-title">カテゴリ</div>
+          <div class="sidebar-content">
+            <ul class="footer-links">
+              <li><a href="../news/index.html">📰 最新ニュース</a></li>
+              <li><a href="index.html">🎤 歌手情報</a></li>
+              <li><a href="../events/index.html">📅 イベント</a></li>
+              <li><a href="../ranking/index.html">🏆 ランキング</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="logo-title" style="font-family:'Noto Serif JP',serif; color:white;">月刊カラオケ<span style="color:#c0392b;">エース</span></span>
+        <p class="footer-desc">演歌・歌謡曲を愛するすべての方に向けた専門情報誌です。</p>
+      </div>
+      <div>
+        <div class="footer-col-title">コンテンツ</div>
+        <ul class="footer-links">
+          <li><a href="../news/index.html">最新ニュース</a></li>
+          <li><a href="index.html">歌手情報</a></li>
+          <li><a href="../events/index.html">イベント</a></li>
+          <li><a href="../ranking/index.html">ランキング</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">サービス</div>
+        <ul class="footer-links">
+          <li><a href="../contact.html">掲載・広告のご案内</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">会社情報</div>
+        <ul class="footer-links">
+          <li><a href="#">運営会社</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 月刊カラオケエース All Rights Reserved.</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    document.querySelectorAll('.kana-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.kana-tab').forEach(function(t) { t.classList.remove('active'); });
+        this.classList.add('active');
+        var row = this.getAttribute('data-row');
+        document.querySelectorAll('.artist-full-card').forEach(function(card) {
+          if (row === 'all' || card.getAttribute('data-row') === row) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

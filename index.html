@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="月刊カラオケエース公式ウェブサイト。演歌・歌謡曲の歌手情報、コンサートイベント、全国カラオケ喫茶の最新情報をお届けします。">
+  <meta property="og:title" content="月刊カラオケエース｜演歌・歌謡曲の総合情報サイト">
+  <meta property="og:description" content="演歌・歌謡曲の歌手情報、イベント、カラオケ喫茶の最新情報">
+  <meta property="og:type" content="website">
+  <title>月刊カラオケエース｜演歌・歌謡曲の総合情報サイト</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero-cover {
+      display: flex;
+      gap: 0;
+      background: #000;
+      align-items: stretch;
+    }
+    .hero-cover-img-wrap {
+      flex: 0 0 38%;
+      width: 38%;
+    }
+    .hero-cover-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: top center;
+      display: block;
+    }
+    .hero-cover-body {
+      flex: 1;
+      background: linear-gradient(135deg, #1a1200, #2c0a0a 60%, #0a1a0a);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 30px 28px;
+      position: relative;
+    }
+    .hero-cover-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('images/cover_2026_03.jpg') center/cover no-repeat;
+      opacity: 0.06;
+    }
+    .hero-cover-inner { position: relative; z-index: 1; }
+    @media (max-width: 768px) {
+      .hero-cover {
+        flex-direction: column;
+      }
+      .hero-cover-img-wrap {
+        flex: none;
+        width: 100%;
+      }
+      .hero-cover-img-wrap img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+      }
+      .hero-cover-body {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header style="background:#fff; border-bottom:4px solid #c0392b;">
+    <div class="header-top" style="background:#f5f5f5; color:#888;">月刊カラオケエース公式ウェブサイト｜演歌・歌謡曲の総合情報</div>
+    <div class="header-main" style="background:#fff;">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990" style="height:80px; width:auto; display:block;">
+      </a>
+      <div class="header-catch" style="color:#555;">
+        演歌・歌謡曲を愛する人のためのポータルサイト
+      </div>
+    </div>
+  </header>
+
+  <!-- ナビゲーション -->
+  <nav>
+    <div class="nav-inner">
+      <ul>
+        <li><a href="index.html">トップ</a></li>
+        <li><a href="news/index.html">ニュース</a></li>
+        <li><a href="artists/index.html">歌手情報</a></li>
+        <li><a href="events/index.html">イベント</a></li>
+        <li><a href="ranking/index.html">ランキング</a></li>
+        <li><a href="magazine.html">最新号</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ブレイキングニュース -->
+  <div class="breaking-news">
+    <div class="breaking-inner">
+      <span class="breaking-label">新着情報</span>
+      <div style="overflow:hidden; flex:1;">
+        <div class="breaking-text">
+          ▶ 新曲発売情報 ／ 春コンサートツアー開催決定 ／ 月刊カラオケエース4月号 好評発売中 ▶
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- メインコンテンツ -->
+  <div class="container">
+    <div class="layout-main">
+
+      <!-- 左カラム（メインコンテンツ） -->
+      <main>
+
+        <!-- トップニュース -->
+        <div class="hero-cover">
+          <div class="hero-cover-img-wrap">
+            <img src="images/cover_2026_03.jpg" alt="月刊カラオケエース 2026年3月号 東海版">
+          </div>
+          <div class="hero-cover-body">
+            <div class="hero-cover-bg"></div>
+            <div class="hero-cover-inner">
+              <span style="display:inline-block; background:#c0392b; color:white; font-size:0.7rem; font-weight:700; padding:3px 10px; letter-spacing:0.1em; margin-bottom:14px;">2026年3月号 好評発売中</span>
+              <div style="font-size:0.72rem; color:#b8860b; letter-spacing:0.15em; margin-bottom:6px;">巻頭特別インタビュー</div>
+              <div style="font-family:'Noto Serif JP',serif; font-size:1.7rem; font-weight:700; color:#fff; line-height:1.3; margin-bottom:8px;">多岐川舞子</div>
+              <div style="font-size:1rem; color:#f0d060; font-family:'Noto Serif JP',serif; margin-bottom:18px;">「お別れメランコリー」</div>
+              <div style="border-top:1px solid rgba(255,255,255,0.15); padding-top:14px; margin-bottom:14px;">
+                <div style="font-size:0.72rem; color:#b8860b; letter-spacing:0.1em; margin-bottom:8px;">歌手取材記事（DAM配信番号付き）</div>
+                <div style="font-size:0.8rem; color:#ddd; line-height:1.8;">
+                  三船和子　黒川真一朗　知里<br>野中さおり　平山花羽　Shizuka
+                </div>
+              </div>
+              <div style="display:flex; gap:16px; font-size:0.72rem; color:#aaa;">
+                <span>通巻427号</span>
+                <span>定価550円（税込）</span>
+                <span>東海版</span>
+              </div>
+              <a href="magazine.html" style="display:inline-block; margin-top:18px; background:#b8860b; color:white; padding:9px 22px; font-size:0.82rem; font-weight:700; letter-spacing:0.05em; text-decoration:none; transition:opacity 0.2s;">定期購読のご案内 &rsaquo;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 最新ニュース -->
+
+        <div class="section-box">
+          <h2 class="section-title">
+            <span class="icon">📰</span> 最新ニュース
+            <a href="news/index.html" class="section-more">もっと見る</a>
+          </h2>
+          <ul class="news-list">
+
+            <li>
+              <a href="news/news12.html" class="news-item">
+                <div class="news-content">
+                  <span class="news-category-tag tag-event">コンサート情報</span>
+                  <span class="news-title-link">丘みどりコンサート2026「演魅 vol.7」7月11日SAYAKAホール（大阪）で開催決定</span>
+                  <span class="news-meta">2026年7月11日</span>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="news/news11.html" class="news-item">
+                <div class="news-content">
+                  <span class="news-category-tag tag-event">コンサート情報</span>
+                  <span class="news-title-link">島津亜矢 40周年記念コンサートツアー2026「ありがとう」全国で開催決定　福井・名古屋・大阪など各地で公演</span>
+                  <span class="news-meta">2026年4月</span>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="news/news10.html" class="news-item">
+                <div class="news-content">
+                  <span class="news-category-tag tag-event">コンサート情報</span>
+                  <span class="news-title-link">氷川きよし、新歌舞伎座（大阪）で4月公演開催　チケット好評受付中</span>
+                  <span class="news-meta">2026年4月15日</span>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="news/news09.html" class="news-item">
+                <div class="news-content">
+                  <span class="news-category-tag tag-artist">新曲情報</span>
+                  <span class="news-title-link">竹川美子、新曲「流氷海峡」を4月22日発売　北の海の情景を情感豊かに描く</span>
+                  <span class="news-meta">2026年4月22日</span>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="news/news07.html" class="news-item">
+                <div class="news-content">
+                  <span class="news-category-tag tag-artist">新曲情報</span>
+                  <span class="news-title-link">石川さゆり、新曲「日々呉々と」を4月8日リリース　しみじみと人生を歌った渾身の一曲</span>
+                  <span class="news-meta">2026年4月8日</span>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="news/news08.html" class="news-item">
+                <div class="news-content">
+                  <span class="news-category-tag tag-artist">新曲情報</span>
+                  <span class="news-title-link">葵かを里、新曲「白糸恋情歌」を4月1日発売　情感あふれる王道演歌で新たな一面を披露</span>
+                  <span class="news-meta">2026年4月1日</span>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="news/news01.html" class="news-item">
+                <div class="news-content">
+                  <span class="news-category-tag tag-artist">新曲情報</span>
+                  <span class="news-title-link">石川さゆり、2026年全国コンサートツアー開催決定　3月27日から9月まで各地で公演</span>
+                  <span class="news-meta">2026年3月</span>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="news/news02.html" class="news-item">
+                <div class="news-content">
+                  <span class="news-category-tag tag-artist">新曲情報</span>
+                  <span class="news-title-link">細川たかし、芸道50周年記念曲第2弾「カムイ岬」リリース　AI活用のMVも話題に</span>
+                  <span class="news-meta">2026年1月7日</span>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="news/news03.html" class="news-item">
+                <div class="news-content">
+                  <span class="news-category-tag tag-artist">歌手情報</span>
+                  <span class="news-title-link">彩青、デビュー初の恋歌「門前仲町の恋ざくら」を発売　23歳・デビュー7年目の新境地</span>
+                  <span class="news-meta">2026年1月7日</span>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="news/news04.html" class="news-item">
+                <div class="news-content">
+                  <span class="news-category-tag tag-artist">新曲情報</span>
+                  <span class="news-title-link">福田こうへい、新曲「志〜こころざし〜」を元旦リリース　荒木とよひさ×弦哲也の最強コンビが制作</span>
+                  <span class="news-meta">2026年1月1日</span>
+                </div>
+              </a>
+            </li>
+
+
+          </ul>
+        </div>
+
+        <!-- イベント情報 -->
+        <div class="section-box">
+          <h2 class="section-title">
+            <span class="icon">📅</span> 今後のイベント
+            <a href="events/index.html" class="section-more">もっと見る</a>
+          </h2>
+          <ul class="event-list">
+
+            <li class="event-item">
+              <div class="event-date-box">
+                <div class="event-month">4月</div>
+                <div class="event-day">6</div>
+                <div class="event-dow">月</div>
+              </div>
+              <div class="event-content">
+                <div class="event-title">夢スターポップス歌謡祭 津島公演</div>
+                <div class="event-venue">津島市文化会館 大ホール（愛知県津島市）</div>
+                <div class="event-artist">出演：錦野旦、松崎しげる、狩人、姿月あさと ほか</div>
+              </div>
+            </li>
+
+            <li class="event-item">
+              <div class="event-date-box">
+                <div class="event-month">4月</div>
+                <div class="event-day">9</div>
+                <div class="event-dow">木</div>
+              </div>
+              <div class="event-content">
+                <div class="event-title">夢スターポップス歌謡祭 名古屋公演</div>
+                <div class="event-venue">Niterra日本特殊陶業市民会館 フォレストホール</div>
+                <div class="event-artist">出演：錦野旦、松崎しげる、狩人、姿月あさと ほか</div>
+              </div>
+            </li>
+
+            <li class="event-item">
+              <div class="event-date-box">
+                <div class="event-month">4月</div>
+                <div class="event-day">24</div>
+                <div class="event-dow">金</div>
+              </div>
+              <div class="event-content">
+                <div class="event-title">辰巳ゆうと スペシャルコンサートツアー2026 名古屋公演</div>
+                <div class="event-venue">Niterra日本特殊陶業市民会館 ビレッジホール</div>
+                <div class="event-artist">出演：辰巳ゆうと</div>
+              </div>
+            </li>
+
+            <li class="event-item">
+              <div class="event-date-box">
+                <div class="event-month">5月</div>
+                <div class="event-day">23</div>
+                <div class="event-dow">土</div>
+              </div>
+              <div class="event-content">
+                <div class="event-title">五木ひろし スペシャルコンサート（御園座創立130周年記念）</div>
+                <div class="event-venue">御園座（名古屋市中区栄）</div>
+                <div class="event-artist">出演：五木ひろし</div>
+              </div>
+            </li>
+
+            <li class="event-item">
+              <div class="event-date-box">
+                <div class="event-month">5月</div>
+                <div class="event-day">25</div>
+                <div class="event-dow">月</div>
+              </div>
+              <div class="event-content">
+                <div class="event-title">坂本冬美 40周年記念コンサート「今日から明日へ」名古屋公演</div>
+                <div class="event-venue">愛知県芸術劇場 大ホール</div>
+                <div class="event-artist">出演：坂本冬美</div>
+              </div>
+            </li>
+
+            <li class="event-item">
+              <div class="event-date-box">
+                <div class="event-month">6月</div>
+                <div class="event-day">10</div>
+                <div class="event-dow">水</div>
+              </div>
+              <div class="event-content">
+                <div class="event-title">令和にっぽん！演歌の夢まつり2026 名古屋公演</div>
+                <div class="event-venue">愛知県芸術劇場 大ホール</div>
+                <div class="event-artist">全席指定 13,500円</div>
+              </div>
+            </li>
+
+            <li class="event-item">
+              <div class="event-date-box">
+                <div class="event-month">6月</div>
+                <div class="event-day">18</div>
+                <div class="event-dow">木</div>
+              </div>
+              <div class="event-content">
+                <div class="event-title">島津亜矢 40周年記念コンサートツアー2026「ありがとう」名古屋公演</div>
+                <div class="event-venue">Niterra日本特殊陶業市民会館 フォレストホール</div>
+                <div class="event-artist">出演：島津亜矢</div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- 歌手情報 -->
+        <div class="section-box">
+          <h2 class="section-title">
+            <span class="icon">🎤</span> 注目の歌手
+            <a href="artists/index.html" class="section-more">もっと見る</a>
+          </h2>
+          <div class="artist-grid">
+
+            <a href="http://h-miyama.migan.co.jp/" target="_blank" rel="noopener" class="artist-card">
+              <div class="artist-name">三山ひろし</div>
+              <div class="artist-genre">演歌</div>
+            </a>
+
+            <a href="https://futami-1026.theblog.me" target="_blank" rel="noopener" class="artist-card">
+              <div class="artist-name">二見颯一</div>
+              <div class="artist-genre">演歌</div>
+            </a>
+
+            <a href="https://www.tatsumi-yuto.com" target="_blank" rel="noopener" class="artist-card">
+              <div class="artist-name">辰巳ゆうと</div>
+              <div class="artist-genre">演歌</div>
+            </a>
+
+            <a href="https://monaki.fanpla.jp" target="_blank" rel="noopener" class="artist-card">
+              <div class="artist-name">モナキ</div>
+              <div class="artist-genre">演歌</div>
+            </a>
+
+            <a href="https://asakamiho.com" target="_blank" rel="noopener" class="artist-card">
+              <div class="artist-name">朝花美穂</div>
+              <div class="artist-genre">演歌</div>
+            </a>
+
+            <a href="https://www.crownrecord.co.jp/s/c01/artist/harada-namito/news?ima=0538&ct=ryuko" target="_blank" rel="noopener" class="artist-card">
+              <div class="artist-name">原田波人</div>
+              <div class="artist-genre">演歌</div>
+            </a>
+
+          </div>
+        </div>
+
+
+      </main>
+
+      <!-- 右カラム（サイドバー） -->
+      <aside>
+
+        <!-- 最新号 -->
+        <div class="sidebar-box">
+          <div class="sidebar-title">最新号のご案内</div>
+          <div class="magazine-cover" style="padding:12px; background:#111;">
+            <a href="magazine.html">
+              <img src="images/cover_2026_03.jpg" alt="月刊カラオケエース 2026年3月号 東海版" style="width:100%; display:block; border:3px solid #b8860b; box-shadow:4px 4px 12px rgba(0,0,0,0.6);">
+            </a>
+            <div class="magazine-issue" style="margin-top:8px;">2026年3月号（東海版）</div>
+          </div>
+          <div class="sidebar-content">
+            <p style="font-size:0.8rem; color:#555; margin-bottom:8px; line-height:1.7;">
+              <strong>巻頭：</strong>多岐川舞子「お別れメランコリー」<br>
+              <strong>取材：</strong>三船和子 / 黒川真一朗 / 知里<br>
+              　　　野中さおり / 平山花羽 / Shizuka<br>
+              <strong>定価：</strong>550円（税込）
+            </p>
+            <a href="magazine.html" class="btn-primary">定期購読のご案内</a>
+          </div>
+        </div>
+
+        <!-- SNS -->
+        <div class="sidebar-box">
+          <div class="sidebar-title">公式SNS</div>
+          <div class="sns-links">
+            <a href="https://x.com/karaoke_ace" target="_blank" rel="noopener" class="sns-btn sns-x">𝕏 フォロー</a>
+            <a href="https://www.youtube.com/@カラオケエース" target="_blank" rel="noopener" class="sns-btn sns-youtube">▶ YouTube</a>
+          </div>
+        </div>
+
+        <!-- レコード会社リンク -->
+        <div class="sidebar-box">
+          <div class="sidebar-title">レコード会社</div>
+          <div class="sidebar-content">
+            <ul class="footer-links">
+              <li><a href="https://columbia.jp/" target="_blank" rel="noopener">日本コロムビア</a></li>
+              <li><a href="https://www.kingrecords.co.jp/" target="_blank" rel="noopener">キングレコード</a></li>
+              <li><a href="https://www.teichiku.co.jp/" target="_blank" rel="noopener">テイチクエンタテインメント</a></li>
+              <li><a href="https://www.jvcmusic.co.jp/" target="_blank" rel="noopener">ビクターエンタテインメント</a></li>
+              <li><a href="https://www.tokuma.jp/" target="_blank" rel="noopener">徳間ジャパンコミュニケーションズ</a></li>
+              <li><a href="https://www.universal-music.co.jp/" target="_blank" rel="noopener">ユニバーサルミュージック</a></li>
+              <li><a href="http://www.crownrecord.co.jp/" target="_blank" rel="noopener">日本クラウン</a></li>
+              <li><a href="https://www.sonymusic.co.jp/" target="_blank" rel="noopener">ソニーミュージック</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 広告バナー -->
+        <a href="contact.html" class="sidebar-banner">
+          <div class="sidebar-banner-text">
+            📣 バナー広告募集中
+          </div>
+          <div class="sidebar-banner-sub">広告・掲載のお問い合わせはこちら</div>
+        </a>
+
+        <!-- カテゴリ一覧 -->
+        <div class="sidebar-box">
+          <div class="sidebar-title">カテゴリ</div>
+          <div class="sidebar-content">
+            <ul class="footer-links">
+              <li><a href="news/index.html">📰 最新ニュース</a></li>
+              <li><a href="artists/index.html">🎤 歌手情報・プロフィール</a></li>
+              <li><a href="events/index.html">📅 イベント・コンサート</a></li>
+              <li><a href="ranking/index.html">🏆 ランキング</a></li>
+              <li><a href="magazine.html">📖 最新号・定期購読</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="logo-title" style="font-family:'Noto Serif JP',serif; color:white;">月刊カラオケ<span style="color:#c0392b;">エース</span></span>
+        <p class="footer-desc">
+          月刊カラオケエースは、演歌・歌謡曲を愛するすべての方に向けた専門情報誌です。<br>
+          歌手情報、コンサート・イベント、全国のカラオケ喫茶情報をお届けしています。
+        </p>
+      </div>
+      <div>
+        <div class="footer-col-title">コンテンツ</div>
+        <ul class="footer-links">
+          <li><a href="news/index.html">最新ニュース</a></li>
+          <li><a href="artists/index.html">歌手情報</a></li>
+          <li><a href="events/index.html">イベント</a></li>
+          <li><a href="ranking/index.html">ランキング</a></li>
+          <li><a href="magazine.html">最新号・定期購読</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">サービス</div>
+        <ul class="footer-links">
+          <li><a href="contact.html">掲載・広告のご案内</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">会社情報</div>
+        <ul class="footer-links">
+          <li><a href="#">運営会社</a></li>
+          <li><a href="#">編集部について</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="terms.html">利用規約</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 月刊カラオケエース All Rights Reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
