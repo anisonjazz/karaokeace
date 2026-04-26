@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1MLXN935D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H1MLXN935D');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="霞-KASMI-プロフィール。歌って踊れる占い師として活動中。2022年歌手デビュー。CD「魔女のブルース／My Destiny」好評発売中。">
+  <title>霞-KASMI- プロフィール｜月刊カラオケエース</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .artist-hero {
+      background: linear-gradient(135deg, #1a0a0a 0%, #3a1020 60%, #1a1a2e 100%);
+      padding: 36px 28px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .artist-hero-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #c0392b44, #b8860b44);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      overflow: hidden;
+    }
+    .artist-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .artist-hero-info { flex: 1; }
+    .artist-hero-catch {
+      font-size: 0.8rem;
+      color: var(--light-gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .artist-hero-name {
+      font-family: var(--font-jp);
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .artist-hero-name span {
+      font-size: 1.1rem;
+      color: var(--light-gold);
+      display: block;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+    }
+    .artist-hero-genre {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      letter-spacing: 0.1em;
+    }
+
+    .profile-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      padding: 28px;
+      background: white;
+    }
+    .profile-table { width: 100%; border-collapse: collapse; }
+    .profile-table th {
+      width: 80px;
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+      font-weight: 600;
+      text-align: left;
+      padding: 7px 0;
+      border-bottom: 1px solid #f0ece0;
+      vertical-align: top;
+    }
+    .profile-table td {
+      font-size: 0.88rem;
+      color: var(--black);
+      padding: 7px 0;
+      border-bottom: 1px solid #f0ece0;
+      line-height: 1.6;
+    }
+    .profile-photo-area {
+      background: #f5f0e8;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      font-size: 0.8rem;
+      color: #bbb;
+      text-align: center;
+      overflow: hidden;
+    }
+    .profile-photo-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bio-block {
+      padding: 24px 28px;
+      background: white;
+      border-top: 1px solid #f0ece0;
+      font-size: 0.93rem;
+      line-height: 2;
+      color: #333;
+    }
+    .bio-block p { margin-bottom: 1.2em; }
+
+    .cd-section {
+      background: white;
+    }
+    .cd-section-title {
+      background: #2c2c2c;
+      color: white;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-left: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cd-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      padding: 1px;
+    }
+    .cd-card {
+      background: white;
+      padding: 20px;
+    }
+    .cd-cover {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #2c1810, #4a1020);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .cd-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .cd-inner { display: flex; gap: 16px; align-items: flex-start; }
+    .cd-info { flex: 1; }
+    .cd-title {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 2px;
+      line-height: 1.4;
+    }
+    .cd-coupling {
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+      margin-bottom: 8px;
+    }
+    .cd-date {
+      font-size: 0.72rem;
+      color: white;
+      background: var(--red);
+      display: inline-block;
+      padding: 2px 8px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .cd-meta {
+      font-size: 0.75rem;
+      color: var(--mid-gray);
+      line-height: 1.8;
+    }
+    .cd-meta strong { color: var(--dark-red); }
+    .cd-karaoke {
+      font-size: 0.72rem;
+      color: #888;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed #eee;
+      line-height: 1.8;
+    }
+    .cd-label {
+      font-size: 0.7rem;
+      color: #999;
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px solid #f0ece0;
+    }
+
+    .unit-block {
+      padding: 24px 28px;
+      background: #faf7f0;
+      border-top: 1px solid var(--border);
+    }
+    .unit-title {
+      font-family: var(--font-jp);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark-red);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .unit-members {
+      display: flex;
+      gap: 20px;
+    }
+    .unit-member {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      flex: 1;
+    }
+    .unit-member-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      background: linear-gradient(135deg, #c0392b33, #b8860b33);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .unit-member-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .unit-member-name {
+      font-family: var(--font-jp);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 6px;
+    }
+    .unit-member-data {
+      font-size: 0.8rem;
+      color: var(--mid-gray);
+      line-height: 1.8;
+    }
+
+    .sns-block {
+      padding: 20px 28px;
+      background: white;
+      border-top: 1px solid #f0ece0;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .sns-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--mid-gray);
+    }
+    .sns-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .sns-btn:hover { opacity: 0.8; }
+    .sns-x { background: #000; color: white; }
+    .sns-insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; }
+    .sns-youtube { background: #ff0000; color: white; }
+    .sns-blog { background: #ff6633; color: white; }
+
+    @media (max-width: 768px) {
+      .artist-hero { flex-direction: column; text-align: center; padding: 24px 16px; gap: 16px; }
+      .artist-hero-name { font-size: 1.6rem; }
+      .profile-block { grid-template-columns: 1fr; padding: 16px; gap: 16px; }
+      .bio-block { padding: 16px; }
+      .cd-grid { grid-template-columns: 1fr; }
+      .cd-inner { flex-direction: column; }
+      .unit-members { flex-direction: column; }
+      .unit-block { padding: 16px; }
+      .sns-block { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header style="background:#fff; border-bottom:4px solid #c0392b;">
+    <div class="header-top" style="background:#f5f5f5; color:#888;">月刊カラオケエース公式ウェブサイト｜演歌・歌謡曲の総合情報</div>
+    <div class="header-main" style="background:#fff;">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990" style="height:80px; width:auto; display:block;">
+      </a>
+      <div class="header-catch" style="color:#555;">演歌・歌謡曲を愛する人のためのポータルサイト</div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <ul>
+        <li><a href="../index.html">トップ</a></li>
+        <li><a href="../news/index.html">ニュース</a></li>
+        <li><a href="index.html" class="active">歌手情報</a></li>
+        <li><a href="../events/index.html">イベント</a></li>
+        <li><a href="../ranking/index.html">ランキング</a></li>
+        <li><a href="../magazine.html">最新号</a></li>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <a href="../index.html">トップ</a>
+    <a href="index.html">歌手情報</a>
+    <span>霞-KASMI-</span>
+  </div>
+
+  <div class="container">
+    <div class="layout-main">
+      <main>
+
+        <div class="section-box">
+          <h1 class="section-title">歌手プロフィール</h1>
+
+          <!-- ヒーロー -->
+          <div class="artist-hero">
+            <div class="artist-hero-photo">
+              <img src="../images/kasmi-profile.png" alt="霞-KASMI-">
+            </div>
+            <div class="artist-hero-info">
+              <div class="artist-hero-catch">🎵 歌って踊れる占い師</div>
+              <div class="artist-hero-name">
+                霞-KASMI-
+                <span>KASMI</span>
+              </div>
+              <span class="artist-hero-genre">演歌・歌謡曲</span>
+            </div>
+          </div>
+
+          <!-- プロフィール -->
+          <div class="profile-block">
+            <div>
+              <table class="profile-table">
+                <tr>
+                  <th>誕生日</th>
+                  <td>3月10日</td>
+                </tr>
+                <tr>
+                  <th>血液型</th>
+                  <td>O型</td>
+                </tr>
+                <tr>
+                  <th>出身</th>
+                  <td>三重県四日市市</td>
+                </tr>
+                <tr>
+                  <th>デビュー</th>
+                  <td>2022年（愛知県）</td>
+                </tr>
+                <tr>
+                  <th>特技</th>
+                  <td>社交ダンス・日本舞踊</td>
+                </tr>
+                <tr>
+                  <th>活動拠点</th>
+                  <td>四日市市石塚町12-1<br>カラオケと占いの店<br>『髭と魔女』を経営</td>
+                </tr>
+              </table>
+            </div>
+            <div class="profile-photo-area">
+              <img src="../images/kasmi-profile.png" alt="霞-KASMI- プロフィール写真">
+            </div>
+          </div>
+
+          <!-- 経歴 -->
+          <div class="bio-block">
+            <p>幼い頃から歌が好きで演歌、ポップス、童謡、ジャンルを問わず歌う。自身の経営する店にもカラオケを導入し歌う事を楽しんでいたが、2019年に脳梗塞を患い、苦しい時期を経て、その後ご縁がありユージンさんのスカウトで2022年歌手デビューした。</p>
+            <p>歌手デビュー後、MIDFMパーソナリティ、BS21 TVPV出演、各種イベントゲスト、店舗様キャンペーン、施設慰問、KBS京都TV出演等、活動を広げている。</p>
+            <p>2枚目CDは自身が作詞をし、思い入れの深い1枚が出来上がった。</p>
+            <p>現在、『歌って踊れる占い師』として張り切って活動中！皆様、応援宜しくお願いします♡</p>
+          </div>
+
+          <!-- ディスコグラフィー -->
+          <div class="cd-section">
+            <div class="cd-section-title">ディスコグラフィー</div>
+            <div class="cd-grid">
+
+              <div class="cd-card">
+                <div class="cd-inner">
+                  <a href="https://shop-crtk.com/item/104188" target="_blank" rel="noopener" class="cd-cover" style="text-decoration:none;">
+                    <img src="../images/kasmi-cd-majo.jpg" alt="魔女のブルース ジャケット">
+                  </a>
+                  <div class="cd-info">
+                    <div class="cd-title">魔女のブルース</div>
+                    <div class="cd-coupling">c/w My Destiny</div>
+                    <div class="cd-date">2025.11.18 発売</div>
+                    <div class="cd-meta">
+                      <strong>作詞</strong> たかぎかすみ<br>
+                      <strong>作曲・編曲</strong> 澤村英哉
+                    </div>
+                    <div class="cd-karaoke">
+                      DAM &nbsp;1219-32 / 1252-73<br>
+                      JOYSOUND &nbsp;641328 / 641329
+                    </div>
+                    <a href="https://shop-crtk.com/item/104188" target="_blank" rel="noopener" style="display:inline-block; margin-top:10px; padding:6px 14px; background:var(--red); color:white; font-size:0.75rem; font-weight:700; text-decoration:none;">🛒 購入する</a>
+                  </div>
+                </div>
+                <div class="cd-label">
+                  発売元：エースエンタテインメント　販売元：株式会社徳間ジャパンコミュニケーションズ
+                </div>
+              </div>
+
+              <div class="cd-card">
+                <div class="cd-inner">
+                  <a href="https://shop-crtk.com/item/48348" target="_blank" rel="noopener" class="cd-cover" style="text-decoration:none;">
+                    <img src="../images/kasmi-cd-ai.jpg" alt="愛・ファシネーション ジャケット">
+                  </a>
+                  <div class="cd-info">
+                    <div class="cd-title">愛・ファシネーション</div>
+                    <div class="cd-coupling">c/w 赤坂サカスShot Bar</div>
+                    <div class="cd-date">2022.7.27 発売</div>
+                    <div class="cd-meta">
+                      <strong>作詞・作曲</strong> ユージン<br>
+                      <strong>編曲</strong> 岩田光司
+                    </div>
+                    <div class="cd-karaoke">
+                      DAM &nbsp;4444-06 / 4444-46<br>
+                      JOYSOUND &nbsp;498742
+                    </div>
+                    <a href="https://shop-crtk.com/item/48348" target="_blank" rel="noopener" style="display:inline-block; margin-top:10px; padding:6px 14px; background:var(--red); color:white; font-size:0.75rem; font-weight:700; text-decoration:none;">🛒 購入する</a>
+                  </div>
+                </div>
+                <div class="cd-label">
+                  発売元：エースエンタテインメント　販売元：株式会社徳間ジャパンコミュニケーションズ
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 霞×髭 ユニット -->
+          <div class="unit-block">
+            <div class="unit-title">ユニット「霞×髭」</div>
+            <div style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;">
+              <img src="../images/kasmi-hige.png" alt="霞×髭" style="max-width:260px; width:100%; border:2px solid var(--gold);">
+              <div style="flex:1; min-width:180px;">
+                <div style="margin-bottom:14px;">
+                  <div class="unit-member-name">霞-KASMI-</div>
+                  <div class="unit-member-data">誕生日：3月10日　血液型：O型<br>出身：三重県四日市市</div>
+                </div>
+                <div>
+                  <div class="unit-member-name">髭-HIGE-</div>
+                  <div class="unit-member-data">誕生日：11月18日　血液型：AB型<br>出身：愛知県</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SNS -->
+          <div class="sns-block">
+            <span class="sns-label">SNS・公式サイト</span>
+            <a href="https://x.com/KASMI_singer" target="_blank" rel="noopener" class="sns-btn sns-x">𝕏 Twitter</a>
+            <a href="https://www.instagram.com/kasmi.singer/" target="_blank" rel="noopener" class="sns-btn sns-insta">📷 Instagram</a>
+            <a href="https://www.youtube.com/@-KASMI-musicoffice" target="_blank" rel="noopener" class="sns-btn sns-youtube">▶ YouTube</a>
+            <a href="https://ameblo.jp/" target="_blank" rel="noopener" class="sns-btn sns-blog">✍ ブログ</a>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 16px;">
+          <a href="index.html" style="font-size:0.85rem; color:var(--dark-red);">← 歌手情報一覧へ戻る</a>
+        </div>
+
+      </main>
+
+      <aside>
+        <div class="sidebar-box">
+          <div class="sidebar-title">最新号のご案内</div>
+          <div class="magazine-cover" style="padding:12px; background:#111;">
+            <a href="../magazine.html">
+              <img src="../images/cover_2026_05.jpg" alt="月刊カラオケエース 2026年5月号 東海版" style="width:100%; display:block; border:3px solid #b8860b; box-shadow:4px 4px 12px rgba(0,0,0,0.6);">
+            </a>
+            <div class="magazine-issue" style="margin-top:8px;">2026年5月号（東海版）</div>
+          </div>
+          <div class="sidebar-content">
+            <a href="../magazine.html" class="btn-primary">定期購読のご案内</a>
+          </div>
+        </div>
+        <div class="sidebar-box">
+          <div class="sidebar-title">カテゴリ</div>
+          <div class="sidebar-content">
+            <ul class="footer-links">
+              <li><a href="../news/index.html">📰 最新ニュース</a></li>
+              <li><a href="index.html">🎤 歌手情報</a></li>
+              <li><a href="../events/index.html">📅 イベント</a></li>
+              <li><a href="../ranking/index.html">🏆 ランキング</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidebar-box">
+          <div class="sidebar-title">最新CD</div>
+          <div class="sidebar-content" style="font-size:0.82rem; line-height:1.8; color:#555;">
+            <strong style="color:var(--dark-red);">魔女のブルース／My Destiny</strong><br>
+            2025年11月18日発売<br>
+            <span style="font-size:0.75rem; color:#888;">DAM 1219-32 / JOYSOUND 641328</span><br>
+            <br>
+            <strong style="color:var(--dark-red);">愛・ファシネーション</strong><br>
+            2022年7月27日発売<br>
+            <span style="font-size:0.75rem; color:#888;">DAM 4444-06 / JOYSOUND 498742</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="../index.html">
+          <img src="../images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990">
+        </a>
+      </div>
+      <div>
+        <div class="footer-col-title">コンテンツ</div>
+        <ul class="footer-links">
+          <li><a href="../news/index.html">最新ニュース</a></li>
+          <li><a href="index.html">歌手情報</a></li>
+          <li><a href="../events/index.html">イベント</a></li>
+          <li><a href="../ranking/index.html">ランキング</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">サービス</div>
+        <ul class="footer-links">
+          <li><a href="../contact.html">掲載・広告のご案内</a></li>
+          <li><a href="../contact.html">お問い合わせ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">会社情報</div>
+        <ul class="footer-links">
+          <li><a href="../company.html">運営会社</a></li>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 月刊カラオケエース All Rights Reserved.</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

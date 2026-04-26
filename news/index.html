@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1MLXN935D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H1MLXN935D');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="演歌・歌謡曲の最新ニュース。歌手の新曲情報、コンサート告知、業界ニュースをお届けします。">
@@ -49,12 +57,27 @@
       font-size: 0.72rem;
       color: #999;
     }
+    .filter-tabs-wrapper {
+      position: relative;
+      background: white;
+      border-bottom: 2px solid var(--red);
+    }
+    .filter-tabs-wrapper::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 2px;
+      width: 32px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.95));
+      pointer-events: none;
+      display: none;
+    }
     .filter-tabs {
       display: flex;
       gap: 0;
       margin-bottom: 0;
       background: white;
-      border-bottom: 2px solid var(--red);
     }
     .filter-tab {
       padding: 10px 20px;
@@ -66,16 +89,42 @@
       transition: all 0.15s;
       text-decoration: none;
       display: block;
+      white-space: nowrap;
     }
     .filter-tab:hover, .filter-tab.active {
       background: var(--red);
       color: white;
     }
+    @media (max-width: 768px) {
+      .filter-tabs-wrapper::after { display: none; }
+      .filter-tabs {
+        flex-wrap: wrap;
+        overflow-x: visible;
+      }
+      .filter-tab {
+        width: 33.333%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px 4px;
+        font-size: 0.78rem;
+        flex-shrink: 0;
+        border-bottom: 1px solid var(--border);
+        white-space: nowrap;
+      }
+      .filter-tab:nth-child(4),
+      .filter-tab:nth-child(5) {
+        width: 50%;
+      }
+      .filter-tab:nth-child(3),
+      .filter-tab:nth-child(5) {
+        border-right: none;
+      }
+    }
     .pagination {
       display: flex;
       justify-content: center;
       gap: 6px;
-      margin-top: 24px;
+      padding: 24px 20px;
     }
     .page-btn {
       padding: 8px 14px;
@@ -133,6 +182,7 @@
         <div class="section-box">
           <h1 class="section-title"><span class="icon">📰</span> 最新ニュース</h1>
 
+          <div class="filter-tabs-wrapper">
           <div class="filter-tabs">
             <a href="#" class="filter-tab active" data-filter="all">すべて</a>
             <a href="#" class="filter-tab" data-filter="artist">歌手情報</a>
@@ -140,8 +190,18 @@
             <a href="#" class="filter-tab" data-filter="concert">コンサート情報</a>
             <a href="#" class="filter-tab" data-filter="info">お知らせ</a>
           </div>
+          </div>
 
           <div class="news-full-list">
+
+            <a href="news13.html" class="news-full-item" data-category="info">
+              <div class="news-full-content">
+                <span class="news-category-tag tag-info">お知らせ</span>
+                <span class="news-full-title">カラオケ特別賞「カラオケ・オブ・ザ・イヤー powered by DAM &amp; JOYSOUND」MUSIC AWARDS JAPAN 2026で実施　演歌・歌謡曲部門の受賞曲は6月13日発表</span>
+                <p class="news-full-excerpt">DAM（第一興商）とJOYSOUND（エクシング）が共同で、音楽授賞式「MUSIC AWARDS JAPAN 2026」においてカラオケ特別賞「カラオケ・オブ・ザ・イヤー」を実施。演歌・歌謡曲部門とJ-Pop部門の2部門で今年最もカラオケで歌われた楽曲を選出する。歌唱キャンペーンは5月20日まで全国のDAM・JOYSOUND設置店舗で実施中。</p>
+                <span class="news-full-meta">2026年4月14日</span>
+              </div>
+            </a>
 
             <a href="news12.html" class="news-full-item" data-category="concert">
               <div class="news-full-content">
@@ -297,8 +357,9 @@
   <footer>
     <div class="footer-main">
       <div class="footer-brand">
-        <span class="logo-title" style="font-family:'Noto Serif JP',serif; color:white;">月刊カラオケ<span style="color:#c0392b;">エース</span></span>
-        <p class="footer-desc">演歌・歌謡曲を愛するすべての方に向けた専門情報誌です。</p>
+        <a href="../index.html">
+          <img src="../images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990">
+        </a>
       </div>
       <div>
         <div class="footer-col-title">コンテンツ</div>
@@ -319,7 +380,7 @@
       <div>
         <div class="footer-col-title">会社情報</div>
         <ul class="footer-links">
-          <li><a href="#">運営会社</a></li>
+          <li><a href="../company.html">運営会社</a></li>
           <li><a href="../privacy.html">プライバシーポリシー</a></li>
         </ul>
       </div>

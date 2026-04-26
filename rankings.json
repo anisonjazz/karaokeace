@@ -1,0 +1,54 @@
+{
+  "dam": {
+    "period": "2026年4月",
+    "sub": "2026年4月 演歌・歌謡曲部門 ／ 出典：clubdam.com",
+    "items": [
+      { "rank": 1,  "song": "津軽海峡・冬景色",       "artist": "石川さゆり" },
+      { "rank": 2,  "song": "北国の春",               "artist": "千昌夫" },
+      { "rank": 3,  "song": "天城越え",               "artist": "石川さゆり" },
+      { "rank": 4,  "song": "時の流れに身をまかせ",   "artist": "テレサ・テン" },
+      { "rank": 5,  "song": "川の流れのように",       "artist": "美空ひばり" },
+      { "rank": 6,  "song": "ラヴ・イズ・オーヴァー", "artist": "欧陽菲菲" },
+      { "rank": 7,  "song": "酒よ",                   "artist": "吉幾三" },
+      { "rank": 8,  "song": "つぐない",               "artist": "テレサ・テン" },
+      { "rank": 9,  "song": "愛燦燦",                 "artist": "美空ひばり" },
+      { "rank": 10, "song": "青い山脈",               "artist": "藤山一郎・奈良光枝" },
+      { "rank": 11, "song": "さざんかの宿",           "artist": "大川栄策" },
+      { "rank": 12, "song": "旅路",                   "artist": "天童よしみ" },
+      { "rank": 13, "song": "北の旅人",               "artist": "石原裕次郎" },
+      { "rank": 14, "song": "高校三年生",             "artist": "舟木一夫" },
+      { "rank": 15, "song": "高原列車は行く",         "artist": "岡本敦郎" },
+      { "rank": 16, "song": "みだれ髪",               "artist": "美空ひばり" },
+      { "rank": 17, "song": "兄弟船",                 "artist": "鳥羽一郎" },
+      { "rank": 18, "song": "ブルー・ライト・ヨコハマ", "artist": "いしだあゆみ" },
+      { "rank": 19, "song": "星影のワルツ",           "artist": "千昌夫" },
+      { "rank": 20, "song": "大阪恋しずく",           "artist": "水森かおり" }
+    ]
+  },
+  "joysound": {
+    "period": "2026年3月",
+    "sub": "2026年3月 演歌・歌謡曲部門 ／ 出典：joysound.com",
+    "items": [
+      { "rank": 1,  "song": "津軽海峡・冬景色",       "artist": "石川さゆり" },
+      { "rank": 2,  "song": "時の流れに身をまかせ",   "artist": "テレサ・テン" },
+      { "rank": 3,  "song": "天城越え",               "artist": "石川さゆり" },
+      { "rank": 4,  "song": "つぐない",               "artist": "テレサ・テン" },
+      { "rank": 5,  "song": "川の流れのように",       "artist": "美空ひばり" },
+      { "rank": 6,  "song": "酒よ",                   "artist": "吉幾三" },
+      { "rank": 7,  "song": "北国の春",               "artist": "千昌夫" },
+      { "rank": 8,  "song": "愛燦燦",                 "artist": "美空ひばり" },
+      { "rank": 9,  "song": "さざんかの宿",           "artist": "大川栄策" },
+      { "rank": 10, "song": "旅路",                   "artist": "天童よしみ" },
+      { "rank": 11, "song": "北の旅人",               "artist": "石原裕次郎" },
+      { "rank": 12, "song": "雪國",                   "artist": "吉幾三" },
+      { "rank": 13, "song": "居酒屋",                 "artist": "五木ひろし／木の実ナナ" },
+      { "rank": 14, "song": "銀座の恋の物語",         "artist": "石原裕次郎／牧村旬子" },
+      { "rank": 15, "song": "みだれ髪",               "artist": "美空ひばり" },
+      { "rank": 16, "song": "兄弟船",                 "artist": "鳥羽一郎" },
+      { "rank": 17, "song": "舟唄",                   "artist": "八代亜紀" },
+      { "rank": 18, "song": "喝采",                   "artist": "ちあきなおみ" },
+      { "rank": 19, "song": "北酒場",                 "artist": "細川たかし" },
+      { "rank": 20, "song": "二輪草",                 "artist": "川中美幸" }
+    ]
+  }
+}

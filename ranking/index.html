@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1MLXN935D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H1MLXN935D');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="演歌・歌謡曲の最新ランキング。オリコン週間・月間ランキング、カラオケDAM・JOYSOUND人気ランキング、年間ベストをまとめてお届けします。">
@@ -12,23 +20,20 @@
       background: white;
       border-bottom: 2px solid var(--red);
       display: flex;
-      flex-wrap: wrap;
       gap: 0;
     }
     .rank-tab {
-      padding: 11px 22px;
-      font-size: 0.88rem;
-      font-weight: 700;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
       color: var(--mid-gray);
       cursor: pointer;
       border-right: 1px solid var(--border);
       transition: all 0.15s;
       user-select: none;
-      border-bottom: 3px solid transparent;
-      margin-bottom: -2px;
+      white-space: nowrap;
     }
-    .rank-tab:hover { background: #faf7f0; color: var(--dark-red); }
-    .rank-tab.active { color: var(--dark-red); border-bottom: 3px solid var(--red); background: white; }
+    .rank-tab:hover, .rank-tab.active { background: var(--red); color: white; }
 
     .rank-panel { display: none; }
     .rank-panel.active { display: block; }
@@ -176,6 +181,55 @@
     @media (max-width: 640px) {
       .karaoke-rank-grid { grid-template-columns: 1fr; }
     }
+
+    @media (max-width: 768px) {
+      html, body { overflow-x: hidden; }
+      .container { padding-left: 12px; padding-right: 12px; }
+      .rank-source-header { flex-wrap: wrap; }
+      .rank-source-date { white-space: normal; word-break: break-all; }
+
+      .rank-tab-wrap {
+        flex-wrap: wrap;
+      }
+      .rank-tab {
+        width: 50%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px 4px;
+        font-size: 0.8rem;
+        border-bottom: 1px solid var(--border);
+        white-space: nowrap;
+      }
+      .rank-tab:nth-child(2n) { border-right: none; }
+      .rank-tab:nth-child(3),
+      .rank-tab:nth-child(4) { border-bottom: none; }
+
+      .rank-source-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 10px 14px;
+      }
+      .rank-source-name { font-size: 0.85rem; }
+      .rank-source-date { font-size: 0.7rem; }
+
+      .rank-full-item {
+        padding: 10px 12px;
+        gap: 10px;
+      }
+      .rank-pos {
+        width: 30px;
+        height: 30px;
+        font-size: 0.78rem;
+      }
+      .rp-1 { font-size: 0.88rem; }
+      .rank-full-song { font-size: 0.88rem; }
+      .rank-full-artist { font-size: 0.74rem; }
+      .rank-full-meta { font-size: 0.66rem; }
+
+      .karaoke-col-header { padding: 10px 12px; font-size: 0.8rem; }
+      .karaoke-col-sub { padding: 4px 12px 5px; font-size: 0.66rem; }
+    }
   </style>
 </head>
 <body>
@@ -187,8 +241,7 @@
         <img src="../images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990" style="height:80px; width:auto; display:block;">
       </a>
       <div class="header-catch" style="color:#555;">
-        演歌・歌謡曲を愛するすべての人へ<br>
-        歌手・イベント・ランキングの最新情報
+        演歌・歌謡曲を愛する人のためのポータルサイト
       </div>
     </div>
   </header>
@@ -221,53 +274,101 @@
 
           <div class="rank-tab-wrap">
             <span class="rank-tab active" onclick="switchRank('single', this)">オリコン</span>
-            <span class="rank-tab" onclick="switchRank('soundscan', this)">うたの手帖</span>
+            <span class="rank-tab" onclick="switchRank('soundscan', this)">歌の手帖</span>
             <span class="rank-tab" onclick="switchRank('kayoten', this)">歌謡ベストテン</span>
             <span class="rank-tab" onclick="switchRank('gifuchan', this)">ぎふチャン演歌</span>
           </div>
 
           <!-- 週間シングル -->
-          <div id="rank-single" class="rank-panel active">
+                    <div id="rank-single" class="rank-panel active">
             <div class="rank-source-header">
               <span class="rank-source-name">週間シングルランキング（演歌・歌謡曲）</span>
-              <span class="rank-source-date">2026年4月6日付（3/23〜3/29集計）</span>
+              <span class="rank-source-date">2026年4月13日〜2026年4月19日集計</span>
             </div>
-            <div class="rank-source-credit">出典：<a href="https://www.oricon.co.jp/rank/jb/w/2026-04-06/" target="_blank" rel="noopener noreferrer">ORICON NEWS</a></div>
+            <div class="rank-source-credit">出典：<a href="https://www.oricon.co.jp/rank/jb/w/2026-04-27/" target="_blank" rel="noopener noreferrer">ORICON NEWS</a></div>
             <div class="rank-full-list">
               <div class="rank-full-item">
                 <div class="rank-pos rp-1">1</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">NEGAI</div>
-                  <div class="rank-full-artist">華MEN組</div>
+                  <div class="rank-full-song">New Beginning(LOVE しない?)</div>
+                  <div class="rank-full-artist">新浜レオン</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-2">2</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">この世は祭り</div>
-                  <div class="rank-full-artist">山内惠介</div>
+                  <div class="rank-full-song">ほんまやで☆なんでやねん☆しらんけど</div>
+                  <div class="rank-full-artist">モナキ</div>
                 </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-3">3</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">夢乱舞</div>
-                  <div class="rank-full-artist">丘みどり</div>
+                  <div class="rank-full-song">純愛</div>
+                  <div class="rank-full-artist">竹島宏</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">4</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">ロンリー・ジェネレーション</div>
-                  <div class="rank-full-artist">辰巳ゆうと</div>
+                  <div class="rank-full-song">陽が沈む前に…/プルメリア ラプソディ</div>
+                  <div class="rank-full-artist">真田ナオキ</div>
                 </div>
-                <div class="rank-full-meta"><span class="rank-change rank-same">－</span></div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">5</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">この世は祭り</div>
+                  <div class="rank-full-artist">山内惠介</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">6</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">青春みれん</div>
+                  <div class="rank-full-artist">中村唯人</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">7</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">恋の終わりの名古屋にひとり</div>
+                  <div class="rank-full-artist">水森かおり</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">8</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">ロンリー・ジェネレーション</div>
+                  <div class="rank-full-artist">辰巳ゆうと</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">9</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">ほど酔い酒</div>
+                  <div class="rank-full-artist">氷川きよし</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">10</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">愛が泣く 日本海</div>
+                  <div class="rank-full-artist">松原健之</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">11</div>
                 <div class="rank-full-info">
                   <div class="rank-full-song">ありがとう</div>
                   <div class="rank-full-artist">純烈</div>
@@ -275,111 +376,55 @@
                 <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">6</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">十三ヶ月</div>
-                  <div class="rank-full-artist">青山新</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">7</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">風神雷神</div>
-                  <div class="rank-full-artist">木村徹二</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">8</div>
+                <div class="rank-pos rp-other">12</div>
                 <div class="rank-full-info">
                   <div class="rank-full-song">古都の雪</div>
                   <div class="rank-full-artist">二見颯一</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">9</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">星空のルビー</div>
-                  <div class="rank-full-artist">梅谷心愛</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">10</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">秋田大黒舞／秋田音頭</div>
-                  <div class="rank-full-artist">金沢明子</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">11</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">わたし</div>
-                  <div class="rank-full-artist">松尾雄史</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">12</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">チャオガ～愛しい人よ～</div>
-                  <div class="rank-full-artist">パク・ジュニョン</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">13</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">俺らしく…</div>
-                  <div class="rank-full-artist">東京力車</div>
+                  <div class="rank-full-song">志〜こころざし〜</div>
+                  <div class="rank-full-artist">福田こうへい</div>
                 </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">14</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">志～こころざし～</div>
-                  <div class="rank-full-artist">福田こうへい</div>
+                  <div class="rank-full-song">風神雷神</div>
+                  <div class="rank-full-artist">木村徹二</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">15</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">暖流桜</div>
-                  <div class="rank-full-artist">川中美幸</div>
+                  <div class="rank-full-song">それからの港町</div>
+                  <div class="rank-full-artist">椎名佐千子</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">16</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">旅路</div>
-                  <div class="rank-full-artist">天童よしみ</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">17</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">十勝で待ってる女です</div>
-                  <div class="rank-full-artist">藤原浩</div>
+                  <div class="rank-full-song">島酒場</div>
+                  <div class="rank-full-artist">里野鈴妹</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">18</div>
+                <div class="rank-pos rp-other">17</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">火の鳥</div>
-                  <div class="rank-full-artist">原田波人</div>
+                  <div class="rank-full-song">長谷寺の雨〜晩秋の大和路〜</div>
+                  <div class="rank-full-artist">鳥羽一郎</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">19</div>
+                <div class="rank-pos rp-other">18</div>
                 <div class="rank-full-info">
                   <div class="rank-full-song">メラメラ</div>
                   <div class="rank-full-artist">平松賢人</div>
@@ -387,12 +432,20 @@
                 <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
               </div>
               <div class="rank-full-item">
+                <div class="rank-pos rp-other">19</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">夢花火</div>
+                  <div class="rank-full-artist">大月みやこ</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
                 <div class="rank-pos rp-other">20</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">恋のからかさ</div>
-                  <div class="rank-full-artist">江河愛司</div>
+                  <div class="rank-full-song">白糸 恋情歌/立山の春</div>
+                  <div class="rank-full-artist">葵かを里</div>
                 </div>
-                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
             </div>
             <div class="rank-legend">
@@ -404,15 +457,31 @@
           </div>
 
           <!-- サウンドスキャン -->
-          <div id="rank-soundscan" class="rank-panel">
+                              <div id="rank-soundscan" class="rank-panel">
             <div class="rank-source-header">
               <span class="rank-source-name">演歌・歌謡曲 週間ヒットチャート</span>
-              <span class="rank-source-date">2026年3月23日〜29日集計</span>
+              <span class="rank-source-date">2026年4月6日～2026年4月12日集計</span>
             </div>
-            <div class="rank-source-credit">出典：<a href="https://news.utate.co.jp/hitchart-new" target="_blank" rel="noopener noreferrer">うたて</a></div>
+            <div class="rank-source-credit">出典：<a href="https://news.utate.co.jp/hitchart-new" target="_blank" rel="noopener noreferrer">歌の手帖</a></div>
             <div class="rank-full-list">
               <div class="rank-full-item">
                 <div class="rank-pos rp-1">1</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">Ｎｅｗ Ｂｅｇｉｎｎｉｎｇ</div>
+                  <div class="rank-full-artist">新浜レオン</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-2">2</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">純愛</div>
+                  <div class="rank-full-artist">竹島宏</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-3">3</div>
                 <div class="rank-full-info">
                   <div class="rank-full-song">この世は祭り</div>
                   <div class="rank-full-artist">山内惠介</div>
@@ -420,119 +489,39 @@
                 <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-2">2</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">NEGAI</div>
-                  <div class="rank-full-artist">華MEN組</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-3">3</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">夢乱舞</div>
-                  <div class="rank-full-artist">丘みどり</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
                 <div class="rank-pos rp-other">4</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">東京ジャンクション</div>
-                  <div class="rank-full-artist">SHOW-WA</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">5</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">風神雷神</div>
-                  <div class="rank-full-artist">木村徹二</div>
+                  <div class="rank-full-song">恋の終わりの名古屋にひとり</div>
+                  <div class="rank-full-artist">水森かおり</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-same">－</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">6</div>
+                <div class="rank-pos rp-other">5</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">十三ヶ月</div>
-                  <div class="rank-full-artist">青山新</div>
+                  <div class="rank-full-song">ロンリー・ジェネレーション</div>
+                  <div class="rank-full-artist">辰巳ゆうと</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">6</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">愛が泣く 日本海</div>
+                  <div class="rank-full-artist">松原健之</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">7</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">旅路</div>
-                  <div class="rank-full-artist">天童よしみ</div>
+                  <div class="rank-full-song">青春みれん</div>
+                  <div class="rank-full-artist">中村唯人</div>
                 </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">8</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">古都の雪</div>
-                  <div class="rank-full-artist">二見颯一</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">9</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">星空のルビー</div>
-                  <div class="rank-full-artist">梅谷心愛</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">10</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">志～こころざし～</div>
-                  <div class="rank-full-artist">福田こうへい</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">11</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">赤い満月（つき）</div>
-                  <div class="rank-full-artist">杜このみ</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">12</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">恋のからかさ</div>
-                  <div class="rank-full-artist">江河愛司</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">13</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">それからの港町</div>
-                  <div class="rank-full-artist">椎名佐千子</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">14</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">一之森大湖です</div>
-                  <div class="rank-full-artist">一之森大湖</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">14</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">一之森音頭</div>
-                  <div class="rank-full-artist">一之森大湖</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">16</div>
                 <div class="rank-full-info">
                   <div class="rank-full-song">夢花火</div>
                   <div class="rank-full-artist">大月みやこ</div>
@@ -540,36 +529,100 @@
                 <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">17</div>
+                <div class="rank-pos rp-other">9</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">えらぶゆりの島空港</div>
-                  <div class="rank-full-artist">山本ユリエ</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">18</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">ロンリー・ジェネレーション</div>
-                  <div class="rank-full-artist">辰巳ゆうと</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">19</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">遠い昔の恋の歌</div>
-                  <div class="rank-full-artist">坂本冬美</div>
+                  <div class="rank-full-song">永遠の沼に堕ちたマリオネット</div>
+                  <div class="rank-full-artist">岡本幸太</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">20</div>
+                <div class="rank-pos rp-other">10</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">駅</div>
-                  <div class="rank-full-artist">山川豊</div>
+                  <div class="rank-full-song">星空のルビー</div>
+                  <div class="rank-full-artist">梅谷心愛</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">11</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">風神雷神</div>
+                  <div class="rank-full-artist">木村徹二</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">12</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">陽が沈む前に…</div>
+                  <div class="rank-full-artist">真田ナオキ</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">13</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">夢乱舞</div>
+                  <div class="rank-full-artist">丘みどり</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">13</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">長谷寺の雨 ～晩秋の大和路～</div>
+                  <div class="rank-full-artist">鳥羽一郎</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">15</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">旅路</div>
+                  <div class="rank-full-artist">天童よしみ</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">16</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">白糸 恋情歌</div>
+                  <div class="rank-full-artist">葵かを里</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">17</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">兄弟波止場</div>
+                  <div class="rank-full-artist">一条貫太</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">18</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">みちのく 銀山 なみだ雪</div>
+                  <div class="rank-full-artist">山口ひろみ</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">19</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">千年の懸想文</div>
+                  <div class="rank-full-artist">五木ひろし</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">20</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">メラメラ</div>
+                  <div class="rank-full-artist">平松賢人</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
               </div>
             </div>
             <div class="rank-legend">
@@ -581,39 +634,71 @@
           </div>
 
           <!-- 歌謡ベストテン -->
-          <div id="rank-kayoten" class="rank-panel">
+                                        <div id="rank-kayoten" class="rank-panel">
             <div class="rank-source-header">
               <span class="rank-source-name">CBC歌謡ベストテン</span>
-              <span class="rank-source-date">2026年3月29日放送（3/18〜3/23集計）</span>
+              <span class="rank-source-date">4月19日放送（4/8（水）～4/14（火）集計）</span>
             </div>
-            <div class="rank-source-credit">出典：<a href="https://radichubu.jp/kayo-ten/contents/id=62714&contents_type=94" target="_blank" rel="noopener noreferrer">CBCラジオ</a></div>
+            <div class="rank-source-credit">出典：<a href="https://radichubu.jp/kayo-ten/contents/id=63008&contents_type=94" target="_blank" rel="noopener noreferrer">CBCラジオ</a></div>
             <div class="rank-full-list">
               <div class="rank-full-item">
                 <div class="rank-pos rp-1">1</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">チャオガ～愛しい人よ～</div>
-                  <div class="rank-full-artist">パク・ジュニョン</div>
+                  <div class="rank-full-song">白糸 恋情歌</div>
+                  <div class="rank-full-artist">葵かを里</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-2">2</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">ロンリー・ジェネレーション</div>
-                  <div class="rank-full-artist">辰巳ゆうと</div>
+                  <div class="rank-full-song">恋の終わりの名古屋にひとり</div>
+                  <div class="rank-full-artist">水森かおり</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-same">－</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-3">3</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">桜の花の木の下で</div>
-                  <div class="rank-full-artist">松阪ゆうき</div>
+                  <div class="rank-full-song">ほんまやで☆なんでやねん☆しらんけど</div>
+                  <div class="rank-full-artist">モナキ</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">4</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">陽が沈む前に…</div>
+                  <div class="rank-full-artist">真田ナオキ</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">5</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">大介のソーラン恋歌</div>
+                  <div class="rank-full-artist">北川大介</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">6</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">おんな越後路</div>
+                  <div class="rank-full-artist">谷島明世</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">7</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">夢乱舞</div>
+                  <div class="rank-full-artist">丘みどり</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">8</div>
                 <div class="rank-full-info">
                   <div class="rank-full-song">それからの港町</div>
                   <div class="rank-full-artist">椎名佐千子</div>
@@ -621,31 +706,15 @@
                 <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">5</div>
+                <div class="rank-pos rp-other">9</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">夢花火</div>
-                  <div class="rank-full-artist">大月みやこ</div>
+                  <div class="rank-full-song">古都の雪</div>
+                  <div class="rank-full-artist">二見颯一</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">6</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">かずら橋恋唄</div>
-                  <div class="rank-full-artist">永井裕子</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">7</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">ありがとう</div>
-                  <div class="rank-full-artist">純烈</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">8</div>
+                <div class="rank-pos rp-other">10</div>
                 <div class="rank-full-info">
                   <div class="rank-full-song">この世は祭り</div>
                   <div class="rank-full-artist">山内惠介</div>
@@ -653,7 +722,23 @@
                 <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">9</div>
+                <div class="rank-pos rp-other">11</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">永遠の沼に堕ちたマリオネット</div>
+                  <div class="rank-full-artist">岡本幸太</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">12</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">星空のルビー</div>
+                  <div class="rank-full-artist">梅谷心愛</div>
+                </div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">13</div>
                 <div class="rank-full-info">
                   <div class="rank-full-song">ほど酔い酒</div>
                   <div class="rank-full-artist">氷川きよし</div>
@@ -661,92 +746,60 @@
                 <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">10</div>
+                <div class="rank-pos rp-other">14</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">春嵐</div>
-                  <div class="rank-full-artist">若山かずさ</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">11</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">遠い昔の恋の歌</div>
-                  <div class="rank-full-artist">坂本冬美</div>
+                  <div class="rank-full-song">花とサムライ</div>
+                  <div class="rank-full-artist">三山ひろし</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">12</div>
+                <div class="rank-pos rp-other">15</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">十三ヶ月</div>
-                  <div class="rank-full-artist">青山新</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">13</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">DO IT！～夢恋人～</div>
-                  <div class="rank-full-artist">LAST FIRST</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
-                <div class="rank-pos rp-other">14</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">星空のルビー</div>
-                  <div class="rank-full-artist">梅谷心愛</div>
+                  <div class="rank-full-song">桜木橋にて</div>
+                  <div class="rank-full-artist">中西りえ</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
               </div>
               <div class="rank-full-item">
-                <div class="rank-pos rp-other">15</div>
-                <div class="rank-full-info">
-                  <div class="rank-full-song">俺らのまつり</div>
-                  <div class="rank-full-artist">蒼彦太</div>
-                </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
-              </div>
-              <div class="rank-full-item">
                 <div class="rank-pos rp-other">16</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">別れの叙情曲（バラード）</div>
-                  <div class="rank-full-artist">山崎ていじ</div>
+                  <div class="rank-full-song">あじさい坂</div>
+                  <div class="rank-full-artist">平山花羽</div>
                 </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">17</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">愛は輪廻転生</div>
-                  <div class="rank-full-artist">小柳ルミ子</div>
+                  <div class="rank-full-song">ロンリー・ジェネレーション</div>
+                  <div class="rank-full-artist">辰巳ゆうと</div>
                 </div>
                 <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">18</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">島酒場</div>
-                  <div class="rank-full-artist">里野鈴妹</div>
+                  <div class="rank-full-song">春嵐</div>
+                  <div class="rank-full-artist">若山かずさ</div>
                 </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">19</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">ゆるし川</div>
-                  <div class="rank-full-artist">永井みゆき</div>
+                  <div class="rank-full-song">長谷寺の雨 ～晩秋の大和路～</div>
+                  <div class="rank-full-artist">鳥羽一郎</div>
                 </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+                <div class="rank-full-meta"><span class="rank-change rank-new">NEW</span></div>
               </div>
               <div class="rank-full-item">
                 <div class="rank-pos rp-other">20</div>
                 <div class="rank-full-info">
-                  <div class="rank-full-song">北国最終便</div>
-                  <div class="rank-full-artist">亜蘭</div>
+                  <div class="rank-full-song">桜の花の木の下で</div>
+                  <div class="rank-full-artist">松阪ゆうき</div>
                 </div>
-                <div class="rank-full-meta"><span class="rank-change rank-up">UP</span></div>
+                <div class="rank-full-meta"><span class="rank-change rank-down">DOWN</span></div>
               </div>
             </div>
             <div class="rank-legend">
@@ -758,71 +811,196 @@
           </div>
 
           <!-- ぎふチャン演歌 -->
-          <div id="rank-gifuchan" class="rank-panel">
+                                                  <div id="rank-gifuchan" class="rank-panel">
             <div class="rank-source-header">
               <span class="rank-source-name">ぎふチャン演歌♪カウントダウン</span>
-              <span class="rank-source-date">2026年3月29日放送</span>
+              <span class="rank-source-date">4月19日放送</span>
             </div>
             <div class="rank-source-credit">出典：<a href="https://www.zf-web.com/radio/regular/enkacountdown/post.html" target="_blank" rel="noopener noreferrer">岐阜放送（ぎふチャン）</a></div>
             <div class="rank-full-list">
-              <div class="rank-full-item"><div class="rank-pos rp-1">1</div><div class="rank-full-info"><div class="rank-full-song">それからの港町</div><div class="rank-full-artist">椎名佐千子</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-2">2</div><div class="rank-full-info"><div class="rank-full-song">かずら橋恋唄</div><div class="rank-full-artist">永井裕子</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-3">3</div><div class="rank-full-info"><div class="rank-full-song">古都の雪</div><div class="rank-full-artist">二見颯一</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">4</div><div class="rank-full-info"><div class="rank-full-song">風神雷神</div><div class="rank-full-artist">木村徹二</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">5</div><div class="rank-full-info"><div class="rank-full-song">駅</div><div class="rank-full-artist">山川豊</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">6</div><div class="rank-full-info"><div class="rank-full-song">この世は祭り</div><div class="rank-full-artist">山内惠介</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">7</div><div class="rank-full-info"><div class="rank-full-song">ロンリー・ジェネレーション</div><div class="rank-full-artist">辰巳ゆうと</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">8</div><div class="rank-full-info"><div class="rank-full-song">夢花火</div><div class="rank-full-artist">大月みやこ</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">9</div><div class="rank-full-info"><div class="rank-full-song">遠い昔の恋の歌</div><div class="rank-full-artist">坂本冬美</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">10</div><div class="rank-full-info"><div class="rank-full-song">ほど酔い酒</div><div class="rank-full-artist">氷川きよし</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">11</div><div class="rank-full-info"><div class="rank-full-song">旅路</div><div class="rank-full-artist">天童よしみ</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">12</div><div class="rank-full-info"><div class="rank-full-song">星空のルビー</div><div class="rank-full-artist">梅谷心愛</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">13</div><div class="rank-full-info"><div class="rank-full-song">花とサムライ</div><div class="rank-full-artist">三山ひろし</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">14</div><div class="rank-full-info"><div class="rank-full-song">十三ヶ月</div><div class="rank-full-artist">青山新</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">15</div><div class="rank-full-info"><div class="rank-full-song">別れの叙情曲</div><div class="rank-full-artist">山崎ていじ</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">16</div><div class="rank-full-info"><div class="rank-full-song">あじさい坂</div><div class="rank-full-artist">平山花羽</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">17</div><div class="rank-full-info"><div class="rank-full-song">志～こころざし～</div><div class="rank-full-artist">福田こうへい</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">18</div><div class="rank-full-info"><div class="rank-full-song">運試し</div><div class="rank-full-artist">原田悠里</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">19</div><div class="rank-full-info"><div class="rank-full-song">ありがとう</div><div class="rank-full-artist">純烈</div></div></div>
-              <div class="rank-full-item"><div class="rank-pos rp-other">20</div><div class="rank-full-info"><div class="rank-full-song">愛は輪廻転生</div><div class="rank-full-artist">小柳ルミ子</div></div></div>
-
+              <div class="rank-full-item">
+                <div class="rank-pos rp-1">1</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">恋の終わりの名古屋にひとり</div>
+                  <div class="rank-full-artist">水森かおり</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-2">2</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">夢花火</div>
+                  <div class="rank-full-artist">大月みやこ</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-3">3</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">白糸 恋情歌</div>
+                  <div class="rank-full-artist">葵かを里</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">4</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">かずら橋恋唄</div>
+                  <div class="rank-full-artist">永井裕子</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">5</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">この世は祭り</div>
+                  <div class="rank-full-artist">山内惠介</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">6</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">陽が沈む前に…</div>
+                  <div class="rank-full-artist">真田ナオキ</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">7</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">それからの港町</div>
+                  <div class="rank-full-artist">椎名佐千子</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">8</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">あじさい坂</div>
+                  <div class="rank-full-artist">平山花羽</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">9</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">駅</div>
+                  <div class="rank-full-artist">山川豊</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">10</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">星空のルビー</div>
+                  <div class="rank-full-artist">梅谷心愛</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">11</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">ほど酔い酒</div>
+                  <div class="rank-full-artist">氷川きよし</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">12</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">花とサムライ</div>
+                  <div class="rank-full-artist">三山ひろし</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">13</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">夢乱舞</div>
+                  <div class="rank-full-artist">丘みどり</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">14</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">ロンリー・ジェネレーション</div>
+                  <div class="rank-full-artist">辰巳ゆうと</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">15</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">日々呉々と</div>
+                  <div class="rank-full-artist">石川さゆり</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">16</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">風神雷神</div>
+                  <div class="rank-full-artist">木村徹二</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">17</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">十三ヶ月</div>
+                  <div class="rank-full-artist">青山新</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">18</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">ふたりの愛歌</div>
+                  <div class="rank-full-artist">すがあきら</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">19</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">あぁひとり旅</div>
+                  <div class="rank-full-artist">鳥羽一郎・山川豊・木村徹二</div>
+                </div>
+              </div>
+              <div class="rank-full-item">
+                <div class="rank-pos rp-other">20</div>
+                <div class="rank-full-info">
+                  <div class="rank-full-song">別れの叙情曲</div>
+                  <div class="rank-full-artist">山崎ていじ</div>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
 
         <!-- ========== カラオケランキング ========== -->
         <div class="section-box">
           <h2 class="section-title"><span class="icon">🎤</span> カラオケ 演歌・歌謡曲 月間人気ランキング</h2>
           <div style="background:#fff8e1; padding:8px 16px; font-size:0.78rem; color:#856404; border-bottom:1px solid #ffe082;">
-            DAM：2026年3月集計 ／ JOYSOUND：2026年2月集計（3月分は公開待ち）
+            DAM：2026年4月集計 ／ JOYSOUND：2026年3月集計
           </div>
           <div class="karaoke-rank-grid">
             <!-- DAM -->
             <div class="karaoke-rank-col">
               <div class="karaoke-col-header"><span>🎵</span> DAM 月間ランキング</div>
-              <div class="karaoke-col-sub">2026年3月 演歌・歌謡曲部門 ／ 出典：clubdam.com</div>
+              <div class="karaoke-col-sub">2026年4月 演歌・歌謡曲部門 ／ 出典：clubdam.com</div>
               <div class="rank-full-list">
                 <div class="rank-full-item"><div class="rank-pos rp-1">1</div><div class="rank-full-info"><div class="rank-full-song">津軽海峡・冬景色</div><div class="rank-full-artist">石川さゆり</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-2">2</div><div class="rank-full-info"><div class="rank-full-song">天城越え</div><div class="rank-full-artist">石川さゆり</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-3">3</div><div class="rank-full-info"><div class="rank-full-song">時の流れに身をまかせ</div><div class="rank-full-artist">テレサ・テン</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">4</div><div class="rank-full-info"><div class="rank-full-song">北国の春</div><div class="rank-full-artist">千昌夫</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-2">2</div><div class="rank-full-info"><div class="rank-full-song">北国の春</div><div class="rank-full-artist">千昌夫</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-3">3</div><div class="rank-full-info"><div class="rank-full-song">天城越え</div><div class="rank-full-artist">石川さゆり</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">4</div><div class="rank-full-info"><div class="rank-full-song">時の流れに身をまかせ</div><div class="rank-full-artist">テレサ・テン</div></div></div>
                 <div class="rank-full-item"><div class="rank-pos rp-other">5</div><div class="rank-full-info"><div class="rank-full-song">川の流れのように</div><div class="rank-full-artist">美空ひばり</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">6</div><div class="rank-full-info"><div class="rank-full-song">酒よ</div><div class="rank-full-artist">吉幾三</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">7</div><div class="rank-full-info"><div class="rank-full-song">つぐない</div><div class="rank-full-artist">テレサ・テン</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">8</div><div class="rank-full-info"><div class="rank-full-song">ラヴ・イズ・オーヴァー</div><div class="rank-full-artist">欧陽菲菲</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">9</div><div class="rank-full-info"><div class="rank-full-song">さざんかの宿</div><div class="rank-full-artist">大川栄策</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">10</div><div class="rank-full-info"><div class="rank-full-song">愛燦燦</div><div class="rank-full-artist">美空ひばり</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">11</div><div class="rank-full-info"><div class="rank-full-song">北の旅人</div><div class="rank-full-artist">石原裕次郎</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">12</div><div class="rank-full-info"><div class="rank-full-song">青い山脈</div><div class="rank-full-artist">藤山一郎・奈良光枝</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">13</div><div class="rank-full-info"><div class="rank-full-song">高校三年生</div><div class="rank-full-artist">舟木一夫</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">14</div><div class="rank-full-info"><div class="rank-full-song">旅路</div><div class="rank-full-artist">天童よしみ</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">6</div><div class="rank-full-info"><div class="rank-full-song">ラヴ・イズ・オーヴァー</div><div class="rank-full-artist">欧陽菲菲</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">7</div><div class="rank-full-info"><div class="rank-full-song">酒よ</div><div class="rank-full-artist">吉幾三</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">8</div><div class="rank-full-info"><div class="rank-full-song">つぐない</div><div class="rank-full-artist">テレサ・テン</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">9</div><div class="rank-full-info"><div class="rank-full-song">愛燦燦</div><div class="rank-full-artist">美空ひばり</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">10</div><div class="rank-full-info"><div class="rank-full-song">青い山脈</div><div class="rank-full-artist">藤山一郎・奈良光枝</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">11</div><div class="rank-full-info"><div class="rank-full-song">さざんかの宿</div><div class="rank-full-artist">大川栄策</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">12</div><div class="rank-full-info"><div class="rank-full-song">旅路</div><div class="rank-full-artist">天童よしみ</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">13</div><div class="rank-full-info"><div class="rank-full-song">北の旅人</div><div class="rank-full-artist">石原裕次郎</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">14</div><div class="rank-full-info"><div class="rank-full-song">高校三年生</div><div class="rank-full-artist">舟木一夫</div></div></div>
                 <div class="rank-full-item"><div class="rank-pos rp-other">15</div><div class="rank-full-info"><div class="rank-full-song">高原列車は行く</div><div class="rank-full-artist">岡本敦郎</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">16</div><div class="rank-full-info"><div class="rank-full-song">みだれ髪</div><div class="rank-full-artist">美空ひばり</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">17</div><div class="rank-full-info"><div class="rank-full-song">兄弟船</div><div class="rank-full-artist">鳥羽一郎</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">18</div><div class="rank-full-info"><div class="rank-full-song">ブルー・ライト・ヨコハマ</div><div class="rank-full-artist">いしだあゆみ</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">19</div><div class="rank-full-info"><div class="rank-full-song">星影のワルツ</div><div class="rank-full-artist">千昌夫</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">20</div><div class="rank-full-info"><div class="rank-full-song">大阪恋しずく</div><div class="rank-full-artist">水森かおり</div></div></div>
               </div>
             </div>
             <!-- JOYSOUND -->
             <div class="karaoke-rank-col">
               <div class="karaoke-col-header"><span>🎵</span> JOYSOUND 月間ランキング</div>
-              <div class="karaoke-col-sub">2026年2月 演歌・歌謡曲部門 ／ 出典：joysound.com</div>
+              <div class="karaoke-col-sub">2026年3月 演歌・歌謡曲部門 ／ 出典：joysound.com</div>
               <div class="rank-full-list">
                 <div class="rank-full-item"><div class="rank-pos rp-1">1</div><div class="rank-full-info"><div class="rank-full-song">津軽海峡・冬景色</div><div class="rank-full-artist">石川さゆり</div></div></div>
                 <div class="rank-full-item"><div class="rank-pos rp-2">2</div><div class="rank-full-info"><div class="rank-full-song">時の流れに身をまかせ</div><div class="rank-full-artist">テレサ・テン</div></div></div>
@@ -830,11 +1008,11 @@
                 <div class="rank-full-item"><div class="rank-pos rp-other">4</div><div class="rank-full-info"><div class="rank-full-song">つぐない</div><div class="rank-full-artist">テレサ・テン</div></div></div>
                 <div class="rank-full-item"><div class="rank-pos rp-other">5</div><div class="rank-full-info"><div class="rank-full-song">川の流れのように</div><div class="rank-full-artist">美空ひばり</div></div></div>
                 <div class="rank-full-item"><div class="rank-pos rp-other">6</div><div class="rank-full-info"><div class="rank-full-song">酒よ</div><div class="rank-full-artist">吉幾三</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">7</div><div class="rank-full-info"><div class="rank-full-song">愛燦燦</div><div class="rank-full-artist">美空ひばり</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">8</div><div class="rank-full-info"><div class="rank-full-song">北国の春</div><div class="rank-full-artist">千昌夫</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">7</div><div class="rank-full-info"><div class="rank-full-song">北国の春</div><div class="rank-full-artist">千昌夫</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">8</div><div class="rank-full-info"><div class="rank-full-song">愛燦燦</div><div class="rank-full-artist">美空ひばり</div></div></div>
                 <div class="rank-full-item"><div class="rank-pos rp-other">9</div><div class="rank-full-info"><div class="rank-full-song">さざんかの宿</div><div class="rank-full-artist">大川栄策</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">10</div><div class="rank-full-info"><div class="rank-full-song">北の旅人</div><div class="rank-full-artist">石原裕次郎</div></div></div>
-                <div class="rank-full-item"><div class="rank-pos rp-other">11</div><div class="rank-full-info"><div class="rank-full-song">旅路</div><div class="rank-full-artist">天童よしみ</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">10</div><div class="rank-full-info"><div class="rank-full-song">旅路</div><div class="rank-full-artist">天童よしみ</div></div></div>
+                <div class="rank-full-item"><div class="rank-pos rp-other">11</div><div class="rank-full-info"><div class="rank-full-song">北の旅人</div><div class="rank-full-artist">石原裕次郎</div></div></div>
                 <div class="rank-full-item"><div class="rank-pos rp-other">12</div><div class="rank-full-info"><div class="rank-full-song">雪國</div><div class="rank-full-artist">吉幾三</div></div></div>
                 <div class="rank-full-item"><div class="rank-pos rp-other">13</div><div class="rank-full-info"><div class="rank-full-song">居酒屋</div><div class="rank-full-artist">五木ひろし／木の実ナナ</div></div></div>
                 <div class="rank-full-item"><div class="rank-pos rp-other">14</div><div class="rank-full-info"><div class="rank-full-song">銀座の恋の物語</div><div class="rank-full-artist">石原裕次郎／牧村旬子</div></div></div>
@@ -912,11 +1090,9 @@
   <footer>
     <div class="footer-main">
       <div class="footer-brand">
-        <span class="logo-title" style="font-family:'Noto Serif JP',serif; color:white;">月刊カラオケ<span style="color:#c0392b;">エース</span></span>
-        <p class="footer-desc">
-          月刊カラオケエースは、演歌・歌謡曲を愛するすべての方に向けた専門情報誌です。<br>
-          歌手情報、コンサート・イベント、ランキング最新情報をお届けしています。
-        </p>
+        <a href="../index.html">
+          <img src="../images/logo.jpg" alt="月刊カラオケエース MONTHLY since 1990">
+        </a>
       </div>
       <div>
         <div class="footer-col-title">コンテンツ</div>
@@ -940,8 +1116,8 @@
       <div>
         <div class="footer-col-title">会社情報</div>
         <ul class="footer-links">
-          <li><a href="#">運営会社</a></li>
-          <li><a href="#">編集部について</a></li>
+          <li><a href="../company.html">運営会社</a></li>
+          <li><a href="../editorial.html">編集部について</a></li>
           <li><a href="../privacy.html">プライバシーポリシー</a></li>
           <li><a href="../terms.html">利用規約</a></li>
         </ul>
